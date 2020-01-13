@@ -2,7 +2,7 @@
   "name": "example",
   "private": true,
   "scripts": {
-    "test": "eslint --cache app/assets/javascripts/**/*.js",
+    "test": "eslint --cache app/assets/javascripts/**/*.js app/views/**/*.jsx app/components/**/*.jsx",
     "compile": "faucet --fingerprint --compact",
     "watch": "faucet --watch"
   },

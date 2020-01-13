@@ -1,7 +1,10 @@
 /* global rails */
 import { createElement } from "complate-stream";
+import Flash from "../../components/flash";
 
 export default function ApplicationLayout({ title, content }, ...children) {
+  let flash = rails.flash().to_h();
+
   return (
     <html>
       <head>
@@ -12,6 +15,9 @@ export default function ApplicationLayout({ title, content }, ...children) {
       </head>
 
       <body>
+        {Object.keys(flash).map(type => (
+          <Flash message={flash[type]} type={type} />
+        ))}
         {content}
         {children}
       </body>
