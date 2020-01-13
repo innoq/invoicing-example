@@ -1,24 +1,35 @@
-# README
+# Example Project for Software Architecture Summit
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Example project for [our talk at Software Architecture
+Summit](https://software-architecture-summit.de/softwarearchitektur/moderne-frontend-entwicklung/).
+The main objective is to show component-based development. We will also show
+some of our favorite tools:
 
-Things you may want to cover:
+* Rails
+* complate
+* faucet
+* aiur
 
-* Ruby version
+## Setup
 
-* System dependencies
+```
+bundle
+npm i
+```
 
-* Configuration
+Now you need to run in parallel:
 
-* Database creation
+```
+rails s
+npm run watch
+```
 
-* Database initialization
+Visit http://localhost:3000 and you are ready to go.
 
-* How to run the test suite
+## Folder structure
 
-* Services (job queues, cache servers, search engines, etc.)
+This is a standard Rails folder structure with the following exceptions:
 
-* Deployment instructions
-
-* ...
+1. `app/assets/javascripts` and `app/assets/stylesheets` only contain the non-component code and register all components
+2. `app/components` contains all components in a flat structure
+3. `app/views` only contains templates (pages in Atomic Design parlance), no partials (atoms, molecules, organisms)
