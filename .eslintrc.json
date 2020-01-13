@@ -1,15 +1,24 @@
 {
-  "extends": ["eslint:recommended"],
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "react/jsx-key": "off",
+    "react/no-unknown-property": "off",
+    "react/prop-types": "off"
   },
   "parserOptions": {
     "ecmaVersion": 2018,
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
   "env": {
     "browser": true,
     "node": true
+  },
+  "settings": {
+    "react": { "pragma": "createElement" }
   }
 }

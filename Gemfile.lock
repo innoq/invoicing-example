@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/complate/complate-ruby.git
+  revision: 77ea7ad6dbad7c7312741f69672af96e40d640c1
+  specs:
+    complate (0.0.2)
+      therubyracer
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -80,6 +87,7 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
+    libv8 (3.16.14.19)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -136,6 +144,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    ref (2.0.0)
     regexp_parser (1.6.0)
     ruby_dep (1.5.0)
     rubyzip (2.0.0)
@@ -154,6 +163,9 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
+    therubyracer (0.12.3)
+      libv8 (~> 3.16.14.15)
+      ref
     thor (1.0.1)
     thread_safe (0.3.6)
     tzinfo (1.2.6)
@@ -181,6 +193,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
+  complate!
   listen (>= 3.0.5, < 3.2)
   puma (~> 4.1)
   rails (~> 6.0.2, >= 6.0.2.1)

@@ -9,6 +9,8 @@ gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
+# Use complate as our view layer
+gem 'complate', github: 'complate/complate-ruby'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
