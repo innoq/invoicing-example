@@ -4,9 +4,12 @@
   "scripts": {
     "test": "eslint --cache app/assets/javascripts/**/*.js app/views/**/*.jsx app/components/**/*.jsx",
     "compile": "faucet --fingerprint --compact",
-    "watch": "faucet --watch"
+    "watch": "faucet --watch",
+    "aiur": "aiur -t ./dist",
+    "aiur-dev": "aiur -t ./dist -w --serve 0.0.0.0:4001"
   },
   "devDependencies": {
+    "aiur": "^0.5.1",
     "eslint": "^6.8.0",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.17.0",
