@@ -1,0 +1,13 @@
+my-color {
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-top: 1rem;
+  border-radius: 0.25rem;
+  &::before {
+    display: block;
+    content: attr(value);
+    margin-top: -1rem;
+    text-align: center;
+  }
+}

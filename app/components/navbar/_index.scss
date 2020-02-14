@@ -1,0 +1,77 @@
+@use "../../assets/stylesheets/colors" as colors;
+
+.navbar-layout {
+  display: grid;
+
+  .navbar {
+    --col-width: 0;
+    position: sticky;
+    bottom: 0;
+    grid-row-start: navbar-start;
+  }
+
+  @media (min-width: 35rem) {
+    grid-template-rows: auto;
+    grid-template-columns: [navbar-start] 4rem auto [navbar-end] 1fr;
+
+    .navbar {
+      grid-row-start: auto;
+      grid-column: navbar-start / navbar-end;
+      grid-template-columns: 4rem var(--col-width);
+
+      &:hover {
+        --col-width: auto;
+      }
+    }
+
+    & > :not(.navbar) {
+      grid-column-start: navbar-end;
+    }    
+  }
+}
+
+.navbar {
+  background-color: colors.$blue-700;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
+
+  a {
+    color: colors.$blue-100;
+    text-decoration: none;
+
+    &:hover {
+      background-color: colors.$blue-500;
+    }
+  }
+
+  .navbar-item {
+    display: grid;
+    align-items: center;
+    grid-template-rows: 4rem;
+    grid-template-columns: 1fr 0;
+
+    .symbol {
+      justify-self: center;
+    }
+
+    .label {
+      overflow: hidden;
+    }
+  }
+
+  @media (min-width: 35rem) {
+    grid-template-columns: 4rem var(--col-width);
+
+    .navbar-item {
+      grid-column: 1 / -1;
+      grid-template-columns: 4rem var(--col-width);
+      grid-template-columns: subgrid;
+
+      .label {
+        overflow: hidden;
+        margin-right: 1rem;
+      }
+    }
+  }
+}
+
