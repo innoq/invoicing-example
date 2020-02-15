@@ -61,3 +61,35 @@ import Navbar, { NavbarLayout, NavbarItem } from "./app/components/navbar";
   </main>
 </NavbarLayout>
 ```
+
+
+Just instantiating the `Navbar` component outside of the navbar layout will position it at the top of the page (or at the position you place it in the document flow).
+
+```jsx
+import { createElement } from "complate-stream";
+import Navbar, { NavbarItem } from "./app/components/navbar";
+
+<div>
+  <Navbar>
+    <NavbarItem href="#">
+      <span>A</span>
+      <span>Apricots</span>
+    </NavbarItem>
+    <NavbarItem href="#">
+      <span>B</span>
+      <span>Buttons</span>
+    </NavbarItem>
+    <NavbarItem href="#">
+      <span>C</span>
+      <span>Cookies</span>
+    </NavbarItem>
+    <NavbarItem href="#">
+      <span>D</span>
+      <span>Dogs</span>
+    </NavbarItem>
+  </Navbar>
+  <main style="height: 300px; border: 1px solid black;">
+    This is the region for the main content area.
+  </main>
+</div>
+```
