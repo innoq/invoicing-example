@@ -1,13 +1,50 @@
+@use "innoq-styleguide/dist/sass/settings/colors" as colors;
+
+@mixin color-definition($color-name, $hex) {
+  &.#{$color-name} {
+    background-color: $hex;
+    &::before {
+      display: block;
+      content: "#{$color-name}";
+      padding: 0.25rem;
+      text-align: center;
+      background-color: colors.$brand-gray-10;
+      grid-area: name;
+    }
+    &::after {
+      display: block;
+      content: "#{$hex}";
+      text-align: center;
+      background-color: colors.$brand-gray-10;
+      border-radius: 0 0 0.25rem 0.25rem;
+      padding: 0 0.25rem 0.25rem 0.25rem;
+      grid-area: hex;
+    }
+  }
+}
+
 my-color {
-  display: inline-block;
-  width: 2.5rem;
-  height: 2.5rem;
-  margin-top: 1rem;
-  border-radius: 0.25rem;
-  &::before {
-    display: block;
-    content: attr(value);
-    margin-top: -1rem;
-    text-align: center;
+  display: inline-grid;
+  min-width: 8rem;
+  margin-bottom: 2rem;
+  border-radius: 0.25rem 0.25rem 0.5rem 0.5rem;
+  margin: 0.125rem;
+  grid-template-rows: 8rem auto auto;
+  grid-template-areas: "swatch" "name" "hex";
+
+  @each $blue, $hex in colors.$brand-blues {
+    @include color-definition($blue, $hex);
+  }
+  @each $red, $hex in colors.$brand-reds {
+    @include color-definition($red, $hex);
+  }
+  @each $green, $hex in colors.$brand-greens {
+    @include color-definition($green, $hex);
+  }
+  @each $yellow, $hex in colors.$brand-yellows {
+    @include color-definition($yellow, $hex);
+  }
+  @each $gray, $hex in colors.$brand-grays {
+    @include color-definition($gray, $hex);
   }
 }

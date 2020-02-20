@@ -1,18 +1,18 @@
-@use "../../assets/stylesheets/colors" as colors;
+@use "innoq-styleguide/dist/sass/settings/colors" as colors;
 
 /* Default behavior of navbar when not in the navbar-layout
 which moves the navbar to the left-hand side */
 .navbar {
-  background-color: colors.$blue-700;
+  background-color: colors.$brand-blue;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
 
   a {
-    color: colors.$blue-100;
+    color: colors.$brand-blue-25;
     text-decoration: none;
 
     &:hover {
-      background-color: colors.$blue-500;
+      background-color: colors.$brand-blue-75;
     }
   }
 

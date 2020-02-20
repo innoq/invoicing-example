@@ -2,17 +2,61 @@ title: Colors
 description: The colors that are available to use in CSS and SCSS
 
 The colors listed here can be used either as an SCSS Variable or a CSS custom property.
-By convention, color names have the name of the color followed by a `-` and then a number providing the relative darkness of the color from 0 - 900
-(with `0` being the lightest and `900` the darkest).
+We use the INNOQ colors from the `innoq-styleguide`, so if you want
+to use the colors from SCSS, import them using:
+
+```
+@use "innoq-styleguide/dist/sass/settings/colors" as colors;
+
+.my-selector {
+  color: colors.$brand-blue
+}
+```
 
 
 ## Blue
 
-SCSS Variable `$blue-{VALUE}`
-CSS Custom Property: `--blue-{VALUE}`
+```html
+<my-color class="brand-blue"></my-color>
+<my-color class="brand-blue-75"></my-color>
+<my-color class="brand-blue-50"></my-color>
+<my-color class="brand-blue-25"></my-color>
+```
+
+## Red
 
 ```html
-<my-color value="100" style="background-color: var(--blue-100);"></my-color>
-<my-color value="500" style="background-color: var(--blue-500);"></my-color>
-<my-color value="700" style="background-color: var(--blue-700);"></my-color>
+<my-color class="brand-red"></my-color>
+<my-color class="brand-red-75"></my-color>
+<my-color class="brand-red-50"></my-color>
+<my-color class="brand-red-25"></my-color>
+```
+
+## Green
+
+```html
+<my-color class="brand-green"></my-color>
+<my-color class="brand-green-75"></my-color>
+<my-color class="brand-green-50"></my-color>
+<my-color class="brand-green-25"></my-color>
+```
+
+## Yellow
+
+```html
+<my-color class="brand-yellow"></my-color>
+<my-color class="brand-yellow-75"></my-color>
+<my-color class="brand-yellow-50"></my-color>
+<my-color class="brand-yellow-25"></my-color>
+```
+
+## Gray
+
+```html
+<my-color class="brand-gray"></my-color>
+<my-color class="brand-gray-75"></my-color>
+<my-color class="brand-gray-50"></my-color>
+<my-color class="brand-gray-25"></my-color>
+<my-color class="brand-gray-20"></my-color>
+<my-color class="brand-gray-10"></my-color>
 ```
