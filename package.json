@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "complate-stream": "^0.16.9",
-    "innoq-styleguide": "^2.1.1"
+    "innoq-styleguide": "^2.1.1",
+    "tabelle": "^0.1.1"
   }
 }

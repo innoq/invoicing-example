@@ -1,0 +1,8 @@
+@use "tabelle/lib/style/base";
+
+.tabelle-arrow--asc::before {
+  mask-image: url("https://unpkg.com/tabelle@0.1.1/dist/images/angle-up-solid.svg");
+}
+.tabelle-arrow--desc::before {
+  mask-image: url("https://unpkg.com/tabelle@0.1.1/dist/images/angle-down-solid.svg");
+}

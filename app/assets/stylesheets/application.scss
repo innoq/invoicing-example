@@ -12,6 +12,7 @@ Application specific code
 @use "typography" as typography;
 @use "app/components/flash";
 @use "app/components/navbar";
+@use "app/components/tabelle";
 
 :root {
   font-family: typography.$font-family-sans-serif;
