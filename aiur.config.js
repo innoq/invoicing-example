@@ -30,6 +30,9 @@ module.exports = {
       {
         source: "./app/assets/images",
         target: "./images"
+      }, {
+        source: "./node_modules/tabelle/lib/images",
+        target: "./images"
       }
     ]
   },
