@@ -19,6 +19,7 @@
     "prettier": "^1.19.1"
   },
   "dependencies": {
-    "complate-stream": "^0.16.9"
+    "complate-stream": "^0.16.9",
+    "innoq-styleguide": "^2.1.1"
   }
 }
