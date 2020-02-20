@@ -6,7 +6,7 @@
     "compile": "faucet --fingerprint --compact",
     "watch": "faucet --watch",
     "aiur": "aiur -t ./dist",
-    "aiur-dev": "aiur -t ./dist -w --serve 0.0.0.0:4001"
+    "aiur-dev": "aiur -t ./dist --watch --liveserve 0.0.0.0:4001"
   },
   "devDependencies": {
     "aiur": "^0.5.1",

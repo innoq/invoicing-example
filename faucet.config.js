@@ -9,8 +9,7 @@ module.exports = {
     {
       source: "./app/assets/stylesheets/application.scss",
       target: "./public/assets/stylesheets/application.css"
-    }
-  ],
+    }],
   static: [
     {
       source: "./app/assets/images",

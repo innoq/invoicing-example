@@ -1,0 +1,81 @@
+@use "../../assets/stylesheets/colors" as colors;
+
+/* Default behavior of navbar when not in the navbar-layout
+which moves the navbar to the left-hand side */
+.navbar {
+  background-color: colors.$blue-700;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
+
+  a {
+    color: colors.$blue-100;
+    text-decoration: none;
+
+    &:hover {
+      background-color: colors.$blue-500;
+    }
+  }
+
+  .navbar-item {
+    display: grid;
+    align-items: center;
+    grid-template-rows: 4rem;
+    grid-template-columns: 1fr 0;
+
+    .symbol {
+      justify-self: center;
+    }
+
+    .label {
+      overflow: hidden;
+    }
+  }
+}
+
+.navbar-layout {
+  display: grid;
+  /* 24 is arbitrary here.
+  Essentially we want the navbar to always be at the bottom. */
+  grid-template-rows: repeat(24, auto) [navbar-start] auto;
+
+  .navbar {
+    --col-width: 0;
+    position: sticky;
+    bottom: 0;
+    grid-row-start: navbar-start;
+  }
+
+  // TODO: move into a @tablet-and-up() mixin
+  @media (min-width: 35rem) {
+    grid-template-rows: auto;
+    grid-template-columns: [navbar-start] 4rem auto [navbar-end] 1fr;
+
+    .navbar {
+      grid-row-start: auto;
+      grid-column: navbar-start / navbar-end;
+      grid-template-rows: repeat(auto-fill, 4rem);
+      grid-template-columns: 4rem var(--col-width);
+
+      &:hover {
+        --col-width: auto;
+      }
+
+      .navbar-item {
+        grid-column: 1 / -1;
+        grid-template-columns: 4rem var(--col-width);
+        /* Since 4rem var(--col-width) is the width of the parent tracks,
+        we can use subgrid instead of repeating it here.
+        Currently only in Firefox supported, so we need both. */
+        grid-template-columns: subgrid;
+
+        .label {
+          margin-right: 1rem;
+        }
+      }
+    }
+
+    & > :not(.navbar) {
+      grid-column-start: navbar-end;
+    }
+  }
+}
