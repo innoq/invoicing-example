@@ -20,9 +20,12 @@ npm i
 Now you need to run in parallel:
 
 ```
-rails s
-npm run watch
+rails server
+npm start
+npm aiur-dev
 ```
+
+Alternatively, you can run it with [foreman](https://github.com/ddollar/foreman) (or a [foreman compatible tool](https://github.com/ddollar/foreman/#ports)).
 
 Visit http://localhost:3000 and you are ready to go.
 
