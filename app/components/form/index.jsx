@@ -1,6 +1,19 @@
 /* global rails */
 import { createElement } from "complate-stream";
 
+/* TODO:
+It would be cool if we could have access to the complate context in aiur,
+so that we could mock the rails helper for the templates.
+*/
+function railsHelper() {
+  if (typeof rails === "undefined") {
+    return {
+      form_authenticity_token: () => "mocked"
+    };
+  }
+  return rails;
+}
+
 export default function Form({ action, method }, ...children) {
   let _method;
   if (!(method === "get" || method === "post")) {
@@ -14,7 +27,7 @@ export default function Form({ action, method }, ...children) {
       <input
         type="hidden"
         name="authenticity_token"
-        value={rails.form_authenticity_token()}
+        value={railsHelper().form_authenticity_token()}
       />
       {children}
     </form>
