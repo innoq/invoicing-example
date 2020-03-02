@@ -19,7 +19,7 @@ import { createElement } from "complate-stream";
 import { NavbarLayout } from "./app/components/navbar";
 
 <NavbarLayout>
-  <div class="navbar" style="background-color: var(--blue-700);">
+  <div class="navbar">
     <p style="color: white;">This is the region for the navbar.</p>
   </div>
   <main style="height: 300px; border: 1px solid black;">

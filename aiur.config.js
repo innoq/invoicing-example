@@ -8,7 +8,8 @@ module.exports = {
     colors: "./app/components/colors.md",
     flash: "./app/components/flash/README.md",
     navbar: "./app/components/navbar/README.md",
-    tabelle: "./app/components/tabelle/README.md"
+    tabelle: "./app/components/tabelle/README.md",
+    table: "./app/components/table/README.md"
   },
 
   snippetAssets: {

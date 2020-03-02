@@ -1,0 +1,26 @@
+@use "innoq-styleguide/dist/sass/settings/colors" as colors;
+
+@use "../../assets/stylesheets/spacers" as spacings;
+
+.table {
+  border-collapse: collapse;
+  box-shadow: 0 5px 6px -7px rgba(0, 0, 0, 0.8), 0 2px 4px -5px rgb(0, 0, 0, 0.95);
+  th {
+    padding: spacings.$spacer-sm spacings.$spacer-md;
+  }
+  td {
+    padding: spacings.$spacer-md;
+    border-top: 1px solid colors.$brand-gray-50;
+    background-color: white;
+
+    &:first-child {
+      border-left: 1px solid colors.$brand-gray-50;
+    }
+    &:last-child {
+      border-right: 1px solid colors.$brand-gray-50;
+    }
+  }
+  tr:last-child td {
+    border-bottom: 1px solid colors.$brand-gray-50;
+  }
+}

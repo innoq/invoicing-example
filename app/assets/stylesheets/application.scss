@@ -4,6 +4,8 @@ $breakpoint-phone: 35rem; /* 560px */
 INNOQ Styleguide
 */
 @use "innoq-styleguide/dist/sass/generic/fontfaces";
+@use "innoq-styleguide/dist/sass/settings/colors" as colors;
+
 
 /*
 Application specific code
@@ -13,7 +15,9 @@ Application specific code
 @use "app/components/flash";
 @use "app/components/navbar";
 @use "app/components/tabelle";
+@use "app/components/table";
 
 :root {
   font-family: typography.$font-family-sans-serif;
+  --background-color: #{colors.$brand-gray-10};
 }
