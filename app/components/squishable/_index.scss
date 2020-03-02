@@ -1,0 +1,18 @@
+.squishable {
+  --squish-at: 1.5rem;
+  white-space: nowrap;
+}
+.squishable::before,
+.squishable::after {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+.squishable::before {
+  content: attr(data-short);
+  max-width: calc((var(--squish-at) - 100%) * 999);
+}
+.squishable::after {
+  content: attr(aria-label);
+  max-width: calc((100% - var(--squish-at)) * 999);
+}

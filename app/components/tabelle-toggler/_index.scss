@@ -1,0 +1,23 @@
+@use "../../assets/stylesheets/helpers" as helpers;
+@use "innoq-styleguide/dist/sass/settings/colors" as colors;
+
+button[is=tabelle-toggler] {
+  border: 0;
+  background: none;
+
+  .expand, .collapse {
+    display: none;
+  }
+  &[aria-expanded=true] {
+    .collapse {
+      display: block;
+      @include helpers.icon-before('angle-down-solid.svg', colors.$brand-blue-75, 1.5rem);
+    }
+  }
+  &[aria-expanded=false] {
+    .expand {
+      display: block;
+      @include helpers.icon-before('angle-right-solid.svg', colors.$brand-blue-75, 1.5rem);
+    }
+  }
+}

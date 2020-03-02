@@ -1,5 +1,55 @@
-@use "tabelle/lib/style/base";
+@use "tabelle/lib/components/tabelle-header/tabelle-header";
+
+@use "../../assets/stylesheets/helpers" as helpers;
+@use "innoq-styleguide/dist/sass/settings/colors" as colors;
+
+// Overwrite styles from tabelle because we want our own colors and icons
+.tabelle-arrow {
+  & {
+    @include helpers.visually-hidden();
+  }
+
+  &--asc, &--desc {
+    cursor: pointer;
+  }
+
+  &--asc {
+    @include helpers.icon-before('caret-up-solid.svg', colors.$brand-blue-25);
+    cursor: pointer;
+  }
+
+  &--desc {
+    @include helpers.icon-before('caret-down-solid.svg', colors.$brand-blue-25);
+    cursor: pointer;
+  }
+
+  &:checked + &--asc::before, &:checked + &--desc::before {
+    background-color: colors.$brand-blue-75;
+  }
+
+  &:hover + &--asc::before, &:hover + &--desc::before,
+  &:focus + &--asc::before, &:focus + &--desc::before {
+    background-color: colors.$brand-blue-50;
+  }
+}
+
+.tabelle-header {
+  grid-template-rows: auto 1rem auto;
+  // Adding a minmax makes it possible to squish the headers if necessary
+  grid-template-columns: minmax(2rem, 1fr) auto;
+  grid-column-gap: 0.25rem;
+
+  .tabelle-arrow--asc {
+    align-self: end;
+  }
+
+  .truncatable {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
 
 .tabelle-input {
   max-width: 100%;
+  border: 1px solid colors.$brand-blue-75;
 }

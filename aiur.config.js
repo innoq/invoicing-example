@@ -8,8 +8,13 @@ module.exports = {
     colors: "./app/components/colors.md",
     flash: "./app/components/flash/README.md",
     navbar: "./app/components/navbar/README.md",
-    tabelle: "./app/components/tabelle/README.md",
-    table: "./app/components/table/README.md"
+    table: {
+      file: "./app/components/table/README.md",
+      children: {
+        tabelle: "./app/components/tabelle/README.md",
+        responsive: "./app/components/table/RESPONSIVE.md"
+      }
+    }
   },
 
   snippetAssets: {
@@ -30,9 +35,6 @@ module.exports = {
     static: [
       {
         source: "./app/assets/images",
-        target: "./images"
-      }, {
-        source: "./node_modules/tabelle/lib/images",
         target: "./images"
       }
     ]

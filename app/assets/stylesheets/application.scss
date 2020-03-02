@@ -7,6 +7,8 @@ INNOQ Styleguide
 @use "innoq-styleguide/dist/sass/settings/colors" as colors;
 
 
+@use "helpers" as helpers;
+
 /*
 Application specific code
 */
@@ -14,10 +16,17 @@ Application specific code
 @use "typography" as typography;
 @use "app/components/flash";
 @use "app/components/navbar";
+@use "app/components/squishable";
 @use "app/components/tabelle";
+@use "app/components/tabelle-toggler";
 @use "app/components/table";
 
 :root {
-  font-family: typography.$font-family-sans-serif;
   --background-color: #{colors.$brand-gray-10};
+  font-family: typography.$font-family-sans-serif;
+  font-size: typography.$font-size-md;
+}
+
+.sr-only {
+  @include helpers.visually-hidden();
 }

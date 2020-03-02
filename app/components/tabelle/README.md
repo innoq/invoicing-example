@@ -1,4 +1,4 @@
-title: Tabelle
+title: Sort / Filter Tables
 description: A progressively enhanced sortable and filterable table
 
 This shows the markup and components to activate the [tabelle](https://www.npmjs.com/package/tabelle) component.
@@ -23,7 +23,7 @@ import Tabelle, { TabelleHeader } from "./app/components/tabelle";
 import Table from "./app/components/table";
 
 <div style="background-color: var(--background-color); padding: 1rem;">
-  <Tabelle action="/tabelle/1.html">
+  <Tabelle action="/table/tabelle/1.html">
     <Table>
       <thead>
         <tr>
@@ -60,7 +60,7 @@ import Tabelle, { TabelleHeader } from "./app/components/tabelle";
 import Table from "./app/components/table";
 
 <div style="background-color: var(--background-color); padding: 1rem;">
-  <Tabelle action="/tabelle/0.html">
+  <Tabelle action="/table/tabelle/0.html">
     <Table>
       <thead>
         <tr>
@@ -103,7 +103,7 @@ import Tabelle, { TabelleHeader } from "./app/components/tabelle";
 import Table from "./app/components/table";
 
 <div style="background-color: var(--background-color); padding: 1rem;">
-  <Tabelle action="/tabelle/3.html">
+  <Tabelle action="/table/tabelle/3.html">
     <Table>
       <thead>
         <tr>
@@ -143,7 +143,7 @@ import Tabelle, { TabelleHeader } from "./app/components/tabelle";
 import Table from "./app/components/table";
 
 <div style="background-color: var(--background-color); padding: 1rem;">
-  <Tabelle action="/tabelle/2.html">
+  <Tabelle action="/table/tabelle/2.html">
     <Table>
       <thead>
         <tr>
