@@ -34,6 +34,12 @@ module.exports = {
         },
         main_layout: "./app/components/main-layout/README.md"
       }
+    },
+    pages: {
+      file: "./app/components/PAGES.md",
+      children: {
+        invoices: "./app/components/pages/invoices.md"
+      }
     }
   },
 

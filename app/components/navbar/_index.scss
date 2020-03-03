@@ -34,15 +34,17 @@ which moves the navbar to the left-hand side */
 
 .navbar-layout {
   display: grid;
-  /* 24 is arbitrary here.
-  Essentially we want the navbar to always be at the bottom. */
-  grid-template-rows: repeat(24, auto) [navbar-start] auto;
+  /* We expect only the `main` element as a child of this component
+  apart from the navbar */
+  grid-template-rows: 1fr [navbar-start] auto;
+  min-height: 100vh;
 
   .navbar {
     --col-width: 0;
     position: sticky;
     bottom: 0;
     grid-row-start: navbar-start;
+    z-index: 1;
   }
 
   // TODO: move into a @tablet-and-up() mixin

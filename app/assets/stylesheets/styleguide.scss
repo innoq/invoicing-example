@@ -47,3 +47,9 @@ my-color {
     @include color-definition($gray, $hex);
   }
 }
+
+:root {
+  --background-color: #{colors.$brand-gray-10};
+  --brand-blue: #{colors.$brand-blue};
+  --brand-red: #{colors.$brand-red};
+}

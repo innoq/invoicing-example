@@ -1,12 +1,14 @@
 @use "../../assets/stylesheets/spacers" as spacings;
+@use "innoq-styleguide/dist/sass/settings/colors" as colors;
 
 .main-layout {
   padding: spacings.$spacer-base spacings.$spacer-sm;
+  background-color: colors.$brand-gray-10;
   .button-group {
     margin-top: spacings.$spacer-sm;
   }
   .button-group + * {
-    margin-top: spacings.$spacer-lg;
+    margin-top: spacings.$spacer-md;
   }
 
   @media (min-width: 35rem) {
@@ -14,8 +16,13 @@
     grid-template-areas: "category buttons"
       "heading buttons"
       "main main";
+    // Currently assumes a single child item
+    // Default if no row-template is set is `auto` which might have some
+    // unexpected behavior, but it will still be placed.
+    grid-template-rows: min-content min-content 1fr;
     & > * {
       grid-column: span 2;
+      align-self: start;
     }
     .page-category {
       grid-area: category;
@@ -24,6 +31,10 @@
       grid-area: buttons;
       margin: 0;
       align-self: end;
+
+      & + * {
+        margin-top: spacings.$spacer-lg;
+      }
     }
     h1 {
       grid-area: heading;
@@ -31,6 +42,6 @@
   }
 
   @media (min-width: 60rem) {
-    padding: spacings.$spacer-base spacings.$spacer-xl;
+    padding: spacings.$spacer-base spacings.$spacer-lg;
   }
 }
