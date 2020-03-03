@@ -1,25 +1,13 @@
+import debounce from 'uitil/debounce'
 import { find } from 'uitil/dom'
 
 class TabelleToggler extends HTMLButtonElement {
   connectedCallback () {
     this.removeAttribute("hidden")
     this.initialExpand()
-    this.addEventListener("click", () => {
-      if (this.expanded) {
-        this.collapse()
-      } else {
-        this.expand()
-      }
-    })
+    this.addEventListener("click", this.toggle.bind(this))
 
-    window.addEventListener('resize', () => {
-      clearTimeout(this.timer)
-
-      this.timer = setTimeout(() => {
-        console.log('resize')
-        this.initialExpand()
-      }, 300)
-    })
+    window.addEventListener('resize', debounce(300, this.initialExpand.bind(this)))
   }
 
   initialExpand () {
@@ -28,6 +16,14 @@ class TabelleToggler extends HTMLButtonElement {
       this.expand()
     } else {
       this.collapse()
+    }
+  }
+
+  toggle () {
+    if (this.expanded) {
+      this.collapse()
+    } else {
+      this.expand()
     }
   }
 
@@ -44,12 +40,9 @@ class TabelleToggler extends HTMLButtonElement {
 
   collapse () {
     this.setAttribute("aria-expanded", "false")
-    let nrOfCols = this.nrOfCols
 
-    find(this.closest("tr"), "td").forEach ((e, i) => {
-      if (i > nrOfCols) {
-        e.classList.add("hide")
-      }
+    find(this.closest("tr"), "td").slice(this.nrOfCols + 1).forEach ((e) => {
+      e.classList.add("hide");
     })
   }
 
