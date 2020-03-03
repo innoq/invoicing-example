@@ -5,6 +5,8 @@ module.exports = {
 
   pages: {
     "": "./app/components/README.md",
+    button: "./app/components/button/README.md",
+    button_group: "./app/components/button-group/README.md",
     colors: "./app/components/colors.md",
     flash: "./app/components/flash/README.md",
     amount: "./app/components/amount/README.md",
