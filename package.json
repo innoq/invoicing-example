@@ -19,8 +19,8 @@
     "prettier": "^1.19.1"
   },
   "dependencies": {
+    "@ungap/custom-elements-builtin": "^0.4.0",
     "complate-stream": "^0.16.9",
-    "document-register-element": "^1.14.3",
     "innoq-styleguide": "^2.1.1",
     "tabelle": "^0.1.1",
     "uitil": "^2.5.0"
