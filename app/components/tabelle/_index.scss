@@ -36,7 +36,7 @@
 .tabelle-header {
   grid-template-rows: auto 1rem auto;
   // Adding a minmax makes it possible to squish the headers if necessary
-  grid-template-columns: minmax(2rem, 1fr) auto;
+  grid-template-columns: minmax(2rem, 1fr) 1rem;
   grid-column-gap: 0.25rem;
 
   .tabelle-arrow--asc {
