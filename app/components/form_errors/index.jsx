@@ -7,7 +7,7 @@ export default function FormErrors({ errors }) {
     return (
       <div id="error_explanation">
         <h2>
-          {rails.pluralize(errors.count, "error")} prohibited this idea from
+          {rails.pluralize(errors.count, "error")} prohibited this invoice from
           being saved:
         </h2>
         <ul>

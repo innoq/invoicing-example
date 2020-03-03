@@ -1,0 +1,22 @@
+FROM node:12.16
+
+# Environment:
+# * We will put the app in /app
+ENV APP_HOME="/app/"
+
+# give the app to the non-root user
+RUN mkdir "$APP_HOME" && \
+  chown -R node:node "$APP_HOME"
+
+# Execute all commands in the app directory with the non-root user from now on
+WORKDIR $APP_HOME
+USER node
+
+# Copy all the files
+COPY --chown=node:node . ./
+
+# Install the Node dependencies
+RUN npm install
+
+# The default is compiling the assets
+CMD ["npm", "run", "faucet-compile"]

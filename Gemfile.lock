@@ -82,6 +82,8 @@ GEM
     concurrent-ruby (1.1.5)
     crass (1.0.6)
     erubi (1.9.0)
+    faker (2.10.2)
+      i18n (>= 1.6, < 2)
     faucet_pipeline_rails (1.0.0)
       rails (>= 4.2.10)
     ffi (1.11.3)
@@ -110,6 +112,7 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.7)
       mini_portile2 (~> 2.4.0)
+    pg (1.2.2)
     public_suffix (4.0.3)
     puma (4.3.1)
       nio4r (~> 2.0)
@@ -164,7 +167,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     therubyracer (0.12.3)
       libv8 (~> 3.16.14.15)
       ref
@@ -192,19 +194,20 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootsnap (>= 1.4.2)
+  bootsnap
   byebug
-  capybara (>= 2.15)
+  capybara
   complate!
+  faker
   faucet_pipeline_rails
-  listen (>= 3.0.5, < 3.2)
-  puma (~> 4.1)
-  rails (~> 6.0.2, >= 6.0.2.1)
+  listen
+  pg
+  puma
+  rails
   selenium-webdriver
   spring
-  spring-watcher-listen (~> 2.0.0)
-  sqlite3 (~> 1.4)
-  web-console (>= 3.3.0)
+  spring-watcher-listen
+  web-console
   webdrivers
 
 RUBY VERSION

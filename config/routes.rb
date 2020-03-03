@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  resources :ideas
-  root to: redirect('/ideas')
+  resources :invoices, only: [:index]
+  root to: redirect('/invoices')
 end
