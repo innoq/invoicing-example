@@ -1,0 +1,95 @@
+@use "innoq-styleguide/dist/sass/settings/colors" as colors;
+
+@use "../../assets/stylesheets/spacers" as spacings;
+@use "../table" as table;
+
+@mixin responsive-behavior ($maxWidth, $nrCols) {
+  @media (max-width: #{$maxWidth}) {
+    --nr-cols: #{$nrCols};
+    thead {
+      th:nth-child(#{$nrCols + 1}) ~ th {
+        display: none;
+      }
+    }
+    tbody {
+      td:nth-child(#{$nrCols + 1}) ~ td {
+        display: grid;
+        grid-column: 2 / calc(var(--nr-cols) + 2);
+        grid-template-columns: subgrid;
+        padding: spacings.$spacer-md 0 spacings.$spacer-xxs 0;
+        &::before {
+          content: attr(data-column);
+          display: block;
+        }
+      }
+      td:nth-child(#{$nrCols + 2}) ~ td {
+        padding: spacings.$spacer-xxs 0;
+      }
+    }
+  }
+}
+
+
+/*
+Normally, we want to do "mobile-first" in the sense that we add behavior with
+media queries, but here we would have to "reset" back to the default table
+styles when the viewport is big enough, and that is a lot of unnecessary code.
+Instead, we look at the default table style and take away the styles with
+max-width media queries, so that we get the mobile behavior that we want.
+The styling behavior defined with the `nth-child ~ td` rules is also easier to
+implement this way, because otherwise we would also have to reset all the old
+`nth-child ~ td` rules before overwriting them again.
+*/
+.table-responsive {
+  .table-toggler-cell {
+    display: none;
+  }
+  .table-toggler-cell + td {
+    border-left: 1px solid var(--border-color-td);
+  }
+  td::before {
+    @include table.table-header-style();
+  }
+
+  @media (max-width: 60rem) {
+    --border-color-td: transparent;
+    .hide {
+      display: none !important;
+    }
+    .table-toggler-cell {
+      display: block;
+    }
+
+    display: grid;
+    grid-template-columns: auto repeat(var(--nr-cols, auto));
+    grid-column-gap: spacings.$spacer-xxs;
+
+    // For browsers without `subgrid`
+    tr {
+      grid-template-columns: 0.5fr repeat(var(--nr-cols), 1fr);
+      grid-column-gap: spacings.$spacer-xxs;
+    }
+
+    thead, tbody, tr {
+      display: grid;
+      grid-column: span calc(var(--nr-cols) + 1);
+      grid-template-columns: subgrid;
+    }
+
+    tr {
+      padding: spacings.$spacer-sm spacings.$spacer-xxs;
+    }
+
+    th, td {
+      padding: 0;
+    }
+
+    tbody {
+      tr {
+        border: 1px solid colors.$brand-gray-50;
+      }
+    }
+  }
+  @include responsive-behavior($maxWidth: 60rem, $nrCols: 4);
+  @include responsive-behavior($maxWidth: 35rem, $nrCols: 2);
+}

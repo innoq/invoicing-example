@@ -1,6 +1,7 @@
 import { createElement, Fragment } from "complate-stream";
 
 import Form from "../form";
+import Squishable from "../squishable";
 
 function TabelleArrows({ name, label, sorted }) {
   return (
@@ -14,7 +15,7 @@ function TabelleArrows({ name, label, sorted }) {
         checked={sorted && sorted === "asc"}
       />
       <label class="tabelle-arrow--asc" for={`${name}_asc`}>
-        <span class="visually-hidden">Sort {label} Ascending</span>
+        <span class="sr-only">Sort {label} Ascending</span>
       </label>
 
       <input
@@ -26,7 +27,7 @@ function TabelleArrows({ name, label, sorted }) {
         checked={sorted && sorted === "desc"}
       />
       <label class="tabelle-arrow--desc" for={`${name}_desc`}>
-        <span class="visually-hidden">Sort {label} Descending</span>
+        <span class="sr-only">Sort {label} Descending</span>
       </label>
     </Fragment>
   );
@@ -44,15 +45,31 @@ function TabelleFilter({ name, label, value }) {
   );
 }
 
-export function TabelleHeader({ name, label, value, sorted }) {
+export function TabelleHeader({ name, label, shortLabel, value, sorted }) {
+  let header = shortLabel ? (
+    <Squishable label={label} short={shortLabel} />
+  ) : (
+    label
+  );
+
   return (
-    <div class="tabelle-header" role="group" aria-labelledby={`${name}_group`}>
-      <span class="header" id={`${name}_group`}>
-        {label}
-      </span>
-      <TabelleArrows name={name} label={label} sorted={sorted} />
-      <TabelleFilter name={name} label={label} value={value} />
-    </div>
+    <th scope="col" role="columnheader" aria-labelledby={`${name}_group`}>
+      <div
+        class="tabelle-header"
+        role="group"
+        aria-label={`Sort and filter ${label}`}
+      >
+        <span
+          class={`header ${shortLabel ? "" : "truncatable"}`}
+          id={`${name}_group`}
+          aria-hidden="true"
+        >
+          {header}
+        </span>
+        <TabelleArrows name={name} label={label} sorted={sorted} />
+        <TabelleFilter name={name} label={label} value={value} />
+      </div>
+    </th>
   );
 }
 

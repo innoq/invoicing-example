@@ -2,7 +2,7 @@
   "name": "example",
   "private": true,
   "scripts": {
-    "test": "eslint --cache app/assets/javascripts/**/*.js app/views/**/*.jsx app/components/**/*.jsx",
+    "test": "eslint --cache app/assets/javascripts/**/*.js app/views/**/*.jsx app/components/**/*.jsx app/components/**/*.js",
     "compile": "faucet --fingerprint --compact",
     "start": "faucet --watch",
     "aiur": "aiur -t ./dist",
@@ -19,8 +19,10 @@
     "prettier": "^1.19.1"
   },
   "dependencies": {
+    "@ungap/custom-elements-builtin": "^0.4.0",
     "complate-stream": "^0.16.9",
     "innoq-styleguide": "^2.1.1",
-    "tabelle": "^0.1.1"
+    "tabelle": "^0.1.1",
+    "uitil": "^2.5.0"
   }
 }

@@ -1,0 +1,50 @@
+@use "innoq-styleguide/dist/sass/settings/colors" as colors;
+
+@use "../../assets/stylesheets/spacers" as spacings;
+@use "../../assets/stylesheets/typography" as typography;
+
+@mixin table-header-style() {
+  color: colors.$brand-blue-75;
+  font-size: typography.$font-size-sm;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.table {
+  --border-color-td: #{colors.$brand-gray-50};
+
+  border-collapse: collapse;
+  box-shadow: 0 5px 6px -7px rgba(0, 0, 0, 0.8), 0 2px 4px -5px rgb(0, 0, 0, 0.95);  
+  th {
+    @include table-header-style();
+    text-align: left;
+    align-self: end;
+    padding: spacings.$spacer-xxs spacings.$spacer-xs;
+  }
+  tbody {
+    background-color: white;
+  }
+  td {
+    padding: spacings.$spacer-md spacings.$spacer-xs;
+    border-top: 1px solid var(--border-color-td);
+    color: colors.$brand-blue;
+
+    &:first-child {
+      border-left: 1px solid var(--border-color-td);
+    }
+    &:last-child {
+      border-right: 1px solid var(--border-color-td);
+    }
+
+    &.emphasized {
+      font-weight: bold;
+    }
+    &.muted {
+      color: colors.$brand-blue-50;
+    }
+  }
+  tr:last-child td {
+    border-bottom: 1px solid var(--border-color-td);
+  }
+}
