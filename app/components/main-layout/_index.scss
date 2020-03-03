@@ -1,0 +1,36 @@
+@use "../../assets/stylesheets/spacers" as spacings;
+
+.main-layout {
+  padding: spacings.$spacer-base spacings.$spacer-sm;
+  .button-group {
+    margin-top: spacings.$spacer-sm;
+  }
+  .button-group + * {
+    margin-top: spacings.$spacer-lg;
+  }
+
+  @media (min-width: 35rem) {
+    display: grid;
+    grid-template-areas: "category buttons"
+      "heading buttons"
+      "main main";
+    & > * {
+      grid-column: span 2;
+    }
+    .page-category {
+      grid-area: category;
+    }
+    .button-group {
+      grid-area: buttons;
+      margin: 0;
+      align-self: end;
+    }
+    h1 {
+      grid-area: heading;
+    }
+  }
+
+  @media (min-width: 60rem) {
+    padding: spacings.$spacer-base spacings.$spacer-xl;
+  }
+}

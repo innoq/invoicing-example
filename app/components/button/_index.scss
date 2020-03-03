@@ -12,6 +12,7 @@
   padding: spacings.$spacer-xs spacings.$spacer-sm;
   font-family: typography.$font-family-sans-serif;
   font-size: typography.$font-size-base;
+  background-color: inherit;
 
   &:focus {
     outline: 3px solid colors.$brand-blue-25;
@@ -29,14 +30,12 @@
   }
   &.secondary {
     border-color: colors.$brand-blue;
-    background-color: white;
     color: colors.$brand-blue;
 
     @include helpers.hover-fill(colors.$brand-red, colors.$brand-blue, colors.$brand-blue);
   }
   &.tertiary {
     border-color: colors.$brand-red;
-    background-color: white;
     color: colors.$brand-red;
 
     &:focus, &:hover {

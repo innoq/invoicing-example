@@ -31,7 +31,8 @@ module.exports = {
             tabelle: "./app/components/tabelle/README.md",
             responsive: "./app/components/table-responsive/README.md"
           }
-        }
+        },
+        main_layout: "./app/components/main-layout/README.md"
       }
     }
   },
