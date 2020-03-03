@@ -1,59 +1,63 @@
-import debounce from 'uitil/debounce'
-import { find } from 'uitil/dom'
+import debounce from "uitil/debounce";
+import { find } from "uitil/dom";
 
 class TabelleToggler extends HTMLButtonElement {
-  connectedCallback () {
-    this.removeAttribute("hidden")
-    this.initialExpand()
-    this.addEventListener("click", this.toggle.bind(this))
-
-    window.addEventListener('resize', debounce(300, this.initialExpand.bind(this)))
+  connectedCallback() {
+    this.removeAttribute("hidden");
+    this.initialExpand();
+    this.addEventListener("click", this.toggle.bind(this));
+    window.addEventListener(
+      "resize",
+      debounce(300, this.initialExpand.bind(this))
+    );
   }
 
-  initialExpand () {
-    this.removeHidden()
+  initialExpand() {
+    this.removeHidden();
     if (this.expanded) {
-      this.expand()
+      this.expand();
     } else {
-      this.collapse()
+      this.collapse();
     }
   }
 
-  toggle () {
+  toggle() {
     if (this.expanded) {
-      this.collapse()
+      this.collapse();
     } else {
-      this.expand()
+      this.expand();
     }
   }
 
-  removeHidden () {
-    find(this.closest("tr"), ".hide").forEach (e => {
-      e.classList.remove('hide')
-    })
+  removeHidden() {
+    find(this.closest("tr"), ".hide").forEach(e => {
+      e.classList.remove("hide");
+    });
   }
 
-  expand () {
-    this.setAttribute("aria-expanded", "true")
-    this.removeHidden()
+  expand() {
+    this.setAttribute("aria-expanded", "true");
+    this.removeHidden();
   }
 
-  collapse () {
-    this.setAttribute("aria-expanded", "false")
+  collapse() {
+    this.setAttribute("aria-expanded", "false");
 
-    find(this.closest("tr"), "td").slice(this.nrOfCols + 1).forEach ((e) => {
-      e.classList.add("hide");
-    })
+    find(this.closest("tr"), "td")
+      .slice(this.nrOfCols + 1)
+      .forEach(e => {
+        e.classList.add("hide");
+      });
   }
 
-  get expanded () {
+  get expanded() {
     return this.getAttribute("aria-expanded") === "true";
   }
 
-  get nrOfCols () {
+  get nrOfCols() {
     let colsStr = getComputedStyle(this).getPropertyValue("--nr-cols");
     return parseInt(colsStr) || 2;
   }
 }
 
-customElements.define('tabelle-toggler', TabelleToggler, { extends: 'button' })
+customElements.define("tabelle-toggler", TabelleToggler, { extends: "button" });

@@ -1,1 +1,1 @@
-import 'tabelle/lib/index'
+import "tabelle/lib/index";
