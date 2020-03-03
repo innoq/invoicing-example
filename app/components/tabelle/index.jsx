@@ -53,17 +53,23 @@ export function TabelleHeader({ name, label, shortLabel, value, sorted }) {
   );
 
   return (
-    <div class="tabelle-header" role="group" aria-labelledby={`${name}_group`}>
-      <span
-        class={`header ${shortLabel ? "" : "truncatable"}`}
-        id={`${name}_group`}
-        title={label}
+    <th scope="col" role="columnheader" aria-labelledby={`${name}_group`}>
+      <div
+        class="tabelle-header"
+        role="group"
+        aria-label={`Sort and filter ${label}`}
       >
-        {header}
-      </span>
-      <TabelleArrows name={name} label={label} sorted={sorted} />
-      <TabelleFilter name={name} label={label} value={value} />
-    </div>
+        <span
+          class={`header ${shortLabel ? "" : "truncatable"}`}
+          id={`${name}_group`}
+          aria-hidden="true"
+        >
+          {header}
+        </span>
+        <TabelleArrows name={name} label={label} sorted={sorted} />
+        <TabelleFilter name={name} label={label} value={value} />
+      </div>
+    </th>
   );
 }
 

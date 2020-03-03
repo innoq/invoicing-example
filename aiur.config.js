@@ -12,7 +12,7 @@ module.exports = {
       file: "./app/components/table/README.md",
       children: {
         tabelle: "./app/components/tabelle/README.md",
-        responsive: "./app/components/table/RESPONSIVE.md"
+        responsive: "./app/components/table-responsive/README.md"
       }
     }
   },

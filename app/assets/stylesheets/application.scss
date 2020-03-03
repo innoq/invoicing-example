@@ -20,6 +20,7 @@ Application specific code
 @use "app/components/tabelle";
 @use "app/components/tabelle-toggler";
 @use "app/components/table";
+@use "app/components/table-responsive";
 
 :root {
   --background-color: #{colors.$brand-gray-10};

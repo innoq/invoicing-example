@@ -14,7 +14,7 @@ export function EmphasizedTableCell(_params, ...children) {
 
 export default function Table({ responsive }, ...children) {
   return (
-    <table class={`table ${responsive ? "table-responsive" : ""}`}>
+    <table class={`table ${responsive ? "table-responsive" : ""}`} role="table">
       {children}
     </table>
   );
