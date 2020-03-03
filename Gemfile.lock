@@ -110,6 +110,7 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.7)
       mini_portile2 (~> 2.4.0)
+    pg (1.2.2)
     public_suffix (4.0.3)
     puma (4.3.1)
       nio4r (~> 2.0)
@@ -164,7 +165,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     therubyracer (0.12.3)
       libv8 (~> 3.16.14.15)
       ref
@@ -198,12 +198,12 @@ DEPENDENCIES
   complate!
   faucet_pipeline_rails
   listen (>= 3.0.5, < 3.2)
+  pg
   puma (~> 4.1)
   rails (~> 6.0.2, >= 6.0.2.1)
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3 (~> 1.4)
   web-console (>= 3.3.0)
   webdrivers
 

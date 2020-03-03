@@ -17,6 +17,8 @@ bundle
 npm i
 ```
 
+Make sure, you have PostgreSQL installed and running. The `DATABASE_URL` environment variable should point to that database.
+
 Now you need to run in parallel:
 
 ```

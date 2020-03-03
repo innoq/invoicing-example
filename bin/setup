@@ -27,5 +27,9 @@ Dir.chdir APP_ROOT do
   File.open(".env", "w") { |f| f.write "USER_MAPPING=#{USER_MAPPING}" }
   puts 'Done'
 
+  puts "\n== Setting up Database =="
+
+  system! 'docker-compose run --rm web rails db:create db:migrate db:seed'
+
   puts "Run `docker-compose up` to start your development server"
 end

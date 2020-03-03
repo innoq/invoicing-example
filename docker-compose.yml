@@ -4,7 +4,10 @@ services:
   web:
     environment:
       RAILS_ENV: development
+      DATABASE_URL: 'postgres://postgres:@db:5432'
     env_file: .env
+    depends_on:
+    - db
     user: "${USER_MAPPING:-app:app}"
     volumes:
     - ${PROJECT_PATH:-.}:/app
@@ -43,6 +46,12 @@ services:
     ports:
     - 4001:4001
 
+  db:
+    image: postgres:10.6
+    volumes:
+    - postgres:/var/lib/postgresql/data
+
 volumes:
   bundle:
   node_modules:
+  postgres:

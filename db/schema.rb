@@ -10,13 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_13_065623) do
+ActiveRecord::Schema.define(version: 2020_03_03_094559) do
 
-  create_table "ideas", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "invoices", force: :cascade do |t|
+    t.string "saleorder_number"
+    t.string "cost_centre_name"
+    t.string "customer_name"
+    t.string "principal_name"
+    t.bigint "approvals"
+    t.bigint "approvals_needed"
+    t.bigint "status"
+    t.decimal "total_net_price", precision: 10, scale: 2
   end
 
 end
