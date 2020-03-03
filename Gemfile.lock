@@ -194,20 +194,20 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootsnap (>= 1.4.2)
+  bootsnap
   byebug
-  capybara (>= 2.15)
+  capybara
   complate!
   faker
   faucet_pipeline_rails
-  listen (>= 3.0.5, < 3.2)
+  listen
   pg
-  puma (~> 4.1)
-  rails (~> 6.0.2, >= 6.0.2.1)
+  puma
+  rails
   selenium-webdriver
   spring
-  spring-watcher-listen (~> 2.0.0)
-  web-console (>= 3.3.0)
+  spring-watcher-listen
+  web-console
   webdrivers
 
 RUBY VERSION
