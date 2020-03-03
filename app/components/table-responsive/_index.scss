@@ -66,7 +66,7 @@ implement this way, because otherwise we would also have to reset all the old
 
     // For browsers without `subgrid`
     tr {
-      grid-template-columns: 3rem repeat(var(--nr-cols), 1fr);
+      grid-template-columns: 0.5fr repeat(var(--nr-cols), 1fr);
       grid-column-gap: spacings.$spacer-xxs;
     }
 
@@ -92,6 +92,4 @@ implement this way, because otherwise we would also have to reset all the old
   }
   @include responsive-behavior($maxWidth: 60rem, $nrCols: 4);
   @include responsive-behavior($maxWidth: 35rem, $nrCols: 2);
-
-  // TODO support for Chrome and browsers without subgrid
 }
