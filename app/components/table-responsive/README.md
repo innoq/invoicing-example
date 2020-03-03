@@ -5,7 +5,7 @@ On this page, we want to put together all of the data that we will be showing in
 so that we can see how all of the components work together.
 
 This implementation uses the Table compontents from the `table-responsive` component.
-Base styles are inherited from the `.table` class, which provides generic CSS styles for tables.
+The component uses the base Table styles.
 However, this responsive variant takes away the `display: table;` property on smaller viewports.
 This means that the cells no longer have table semantics.
 To fix this, we add the redundant table `role` attributes to the elements in our table.
