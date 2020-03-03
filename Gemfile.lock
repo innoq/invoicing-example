@@ -82,6 +82,8 @@ GEM
     concurrent-ruby (1.1.5)
     crass (1.0.6)
     erubi (1.9.0)
+    faker (2.10.2)
+      i18n (>= 1.6, < 2)
     faucet_pipeline_rails (1.0.0)
       rails (>= 4.2.10)
     ffi (1.11.3)
@@ -196,6 +198,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   complate!
+  faker
   faucet_pipeline_rails
   listen (>= 3.0.5, < 3.2)
   pg

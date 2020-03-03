@@ -13,6 +13,8 @@ gem 'puma', '~> 4.1'
 gem 'complate', github: 'complate/complate-ruby'
 # Use faucet-pipeline as our asset pipeline
 gem 'faucet_pipeline_rails'
+# Generate random data
+gem 'faker'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
