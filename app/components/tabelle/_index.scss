@@ -5,30 +5,32 @@
 
 // Overwrite styles from tabelle because we want our own colors and icons
 .tabelle-arrow {
-  & {
-    @include helpers.visually-hidden();
-  }
+  @include helpers.visually-hidden();
 
-  &--asc, &--desc {
+  &--asc,
+  &--desc {
     cursor: pointer;
   }
 
   &--asc {
-    @include helpers.icon-before('caret-up-solid.svg', colors.$brand-blue-25);
+    @include helpers.icon-before("caret-up-solid.svg", colors.$brand-blue-25);
     cursor: pointer;
   }
 
   &--desc {
-    @include helpers.icon-before('caret-down-solid.svg', colors.$brand-blue-25);
+    @include helpers.icon-before("caret-down-solid.svg", colors.$brand-blue-25);
     cursor: pointer;
   }
 
-  &:checked + &--asc::before, &:checked + &--desc::before {
+  &:checked + &--asc::before,
+  &:checked + &--desc::before {
     background-color: colors.$brand-blue-75;
   }
 
-  &:hover + &--asc::before, &:hover + &--desc::before,
-  &:focus + &--asc::before, &:focus + &--desc::before {
+  &:hover + &--asc::before,
+  &:hover + &--desc::before,
+  &:focus + &--asc::before,
+  &:focus + &--desc::before {
     background-color: colors.$brand-blue-50;
   }
 }

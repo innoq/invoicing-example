@@ -9,6 +9,11 @@ some of our favorite tools:
 * complate
 * faucet
 * aiur
+* eslint
+* stylelint
+* prettier
+* tabelle
+* Custom Elements
 
 ## Setup (without Docker)
 

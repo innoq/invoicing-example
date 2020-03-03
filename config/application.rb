@@ -31,3 +31,6 @@ module Example
     config.i18n.default_locale = :de
   end
 end
+
+# weird fix for the autoloader
+Rails.autoloaders.main.ignore(Rails.root.join('app/components'))
