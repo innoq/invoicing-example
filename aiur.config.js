@@ -7,6 +7,7 @@ module.exports = {
     "": "./app/components/README.md",
     colors: "./app/components/colors.md",
     flash: "./app/components/flash/README.md",
+    amount: "./app/components/amount/README.md",
     navbar: "./app/components/navbar/README.md",
     table: {
       file: "./app/components/table/README.md",

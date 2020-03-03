@@ -28,6 +28,7 @@ import { createElement } from "complate-stream";
 import Table, { TBody, THead, Tr, Td, CollapserTh, CollapserTd } from "./app/components/table-responsive";
 import TabelleToggler from "./app/components/tabelle-toggler";
 import Tabelle, { TabelleHeader } from "./app/components/tabelle";
+import Amount from "./app/components/amount";
 
 <div style="background-color: var(--background-color); padding: 1rem;">
   <h1 class="sr-only">Responsive Table</h1>
@@ -58,7 +59,9 @@ import Tabelle, { TabelleHeader } from "./app/components/tabelle";
         <Td column="Principal" modifier="muted">Jörg Müller</Td>
         <Td column="Freigaben" modifier="muted">2 / 3</Td>
         <Td column="Status" modifier="muted">1 / 5</Td>
-        <Td column="Nettopreis">2.575,00 €</Td>
+        <Td column="Nettopreis">
+          <Amount>2.575,00 €</Amount>
+        </Td>
       </Tr>)}
     </TBody>
   </Table>
