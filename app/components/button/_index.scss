@@ -1,0 +1,52 @@
+@use "innoq-styleguide/dist/sass/settings/colors" as colors;
+
+@use "../../assets/stylesheets/helpers" as helpers;
+@use "../../assets/stylesheets/spacers" as spacings;
+@use "../../assets/stylesheets/typography" as typography;
+
+.button {
+  display: inline-block;
+  position: relative;
+  border: 3px solid transparent;
+  text-decoration: none;
+  padding: spacings.$spacer-xs spacings.$spacer-sm;
+  font-family: typography.$font-family-sans-serif;
+  font-size: typography.$font-size-base;
+  background-color: inherit;
+
+  &:focus {
+    outline: 3px solid colors.$brand-blue-25;
+  }
+
+  &.primary {
+    background-color: colors.$brand-red;
+    border-color: colors.$brand-red;
+    color: white;
+
+    @include helpers.hover-fill(colors.$brand-blue, white, white);
+    &:focus,
+    &:hover {
+      border-color: colors.$brand-blue;
+    }
+  }
+  &.secondary {
+    border-color: colors.$brand-blue;
+    color: colors.$brand-blue;
+
+    @include helpers.hover-fill(
+      colors.$brand-red,
+      colors.$brand-blue,
+      colors.$brand-blue
+    );
+  }
+  &.tertiary {
+    border-color: colors.$brand-red;
+    color: colors.$brand-red;
+
+    &:focus,
+    &:hover {
+      background-color: colors.$brand-red;
+      color: white;
+    }
+  }
+}

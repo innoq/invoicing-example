@@ -5,17 +5,19 @@ INNOQ Styleguide
 */
 @use "innoq-styleguide/dist/sass/generic/fontfaces";
 @use "innoq-styleguide/dist/sass/settings/colors" as colors;
-
+@use "typography" as typography;
 @use "helpers" as helpers;
 
 /*
 Application specific code
 */
-
-@use "typography" as typography;
 @use "app/components/amount";
+@use "app/components/button";
+@use "app/components/button-group";
 @use "app/components/flash";
+@use "app/components/main-layout";
 @use "app/components/navbar";
+@use "app/components/page-category";
 @use "app/components/squishable";
 @use "app/components/tabelle";
 @use "app/components/tabelle-toggler";
@@ -26,6 +28,12 @@ Application specific code
   --background-color: #{colors.$brand-gray-10};
   font-family: typography.$font-family-sans-serif;
   font-size: typography.$font-size-md;
+}
+
+h1 {
+  font-family: typography.$font-family-sans-serif-heavy;
+  margin: 0;
+  color: colors.$brand-blue;
 }
 
 .sr-only {
