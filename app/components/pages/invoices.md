@@ -13,6 +13,8 @@ import Button from "./app/components/button";
 import PageCategory from "./app/components/page-category";
 import ButtonGroup from "./app/components/button-group";
 import MainLayout from "./app/components/main-layout";
+import Amount from "./app/components/amount";
+import ProgressBar from "./app/components/progress-bar";
 
 <NavbarLayout>
   <Navbar>
@@ -65,9 +67,15 @@ import MainLayout from "./app/components/main-layout";
           <Td column="Sale Order Name">Quality-focused bandwidth-monitored parallelism</Td>
           <Td column="Kunde" modifier="muted">Stiedemann, Wolff and Pachocha</Td>
           <Td column="Principal" modifier="muted">Jörg Müller</Td>
-          <Td column="Freigaben" modifier="muted">2 / 3</Td>
-          <Td column="Status" modifier="muted">1 / 5</Td>
-          <Td column="Nettopreis">2.575,00 €</Td>
+          <Td column="Freigaben" modifier="muted">
+            <ProgressBar value="2" max="3" />
+          </Td>
+          <Td column="Status" modifier="muted">
+            <ProgressBar modifier="green" value="1" max="5" />
+          </Td>
+          <Td column="Nettopreis">
+            <Amount>2.575,00 €</Amount>
+          </Td>
         </Tr>)}
       </TBody>
     </Table>

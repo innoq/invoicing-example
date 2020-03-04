@@ -9,6 +9,7 @@
     appearance: none;
     height: spacings.$spacer-xxs;
     border-radius: 1rem;
+    width: 100%;
   }
 
   ::-webkit-progress-bar {
@@ -24,6 +25,8 @@
     background-color: colors.$brand-red;
   }
 
+  // I'd prefer to have a modifier with some meaning here, but I'm not sure
+  // when which progress bar is used.
   &.green {
     ::-webkit-progress-value {
       background-color: colors.$brand-green;
