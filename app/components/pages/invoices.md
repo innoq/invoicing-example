@@ -105,7 +105,7 @@ import Icon from "./app/components/icon";
             <ProgressBar modifier="green" value="1" max="5" />
           </Td>
           <Td column="Nettopreis">
-            <Amount>2.575,00 €</Amount>
+            <Amount currency="EUR" locale="en-US">{2.575,00}</Amount>
           </Td>
         </Tr>)}
       </TBody>

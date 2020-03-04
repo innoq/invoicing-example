@@ -181,7 +181,9 @@ export function InvoicesIndex({
                         <ProgressBar modifier="green" value="1" max="5" />
                       </Td>
                       <Td column="Nettopreis">
-                        <Amount>{invoice.total_net_price} €</Amount>
+                        <Amount currency="EUR" locale="en-US">
+                          {invoice.total_net_price}
+                        </Amount>
                       </Td>
                     </Tr>
                   ))}
