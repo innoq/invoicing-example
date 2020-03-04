@@ -1,5 +1,6 @@
 @use "../../assets/stylesheets/spacers" as spacings;
 @use "innoq-styleguide/dist/sass/settings/colors" as colors;
+@use "../../assets/stylesheets/breakpoints" as breakpoints;
 
 .main-layout {
   padding: spacings.$spacer-base spacings.$spacer-sm;
@@ -11,7 +12,8 @@
     margin-top: spacings.$spacer-md;
   }
 
-  @media (min-width: 35rem) {
+  @include breakpoints.for-tablet-portrait-up {
+    padding: spacings.$spacer-base spacings.$spacer-lg;
     display: grid;
     grid-template-areas:
       "category buttons"
@@ -40,9 +42,5 @@
     h1 {
       grid-area: heading;
     }
-  }
-
-  @media (min-width: 60rem) {
-    padding: spacings.$spacer-base spacings.$spacer-lg;
   }
 }

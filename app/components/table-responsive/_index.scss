@@ -1,5 +1,5 @@
 @use "innoq-styleguide/dist/sass/settings/colors" as colors;
-
+@use "../../assets/stylesheets/breakpoints" as breakpoints;
 @use "../../assets/stylesheets/spacers" as spacings;
 @use "../table" as table;
 
@@ -50,7 +50,7 @@ implement this way, because otherwise we would also have to reset all the old
     @include table.table-header-style();
   }
 
-  @media (max-width: 60rem) {
+  @media (max-width: breakpoints.$desktop) {
     --border-color-td: transparent;
     .hide {
       display: none !important;
@@ -89,6 +89,6 @@ implement this way, because otherwise we would also have to reset all the old
       }
     }
   }
-  @include responsive-behavior($maxWidth: 60rem, $nrCols: 4);
-  @include responsive-behavior($maxWidth: 35rem, $nrCols: 2);
+  @include responsive-behavior($maxWidth: breakpoints.$desktop, $nrCols: 4);
+  @include responsive-behavior($maxWidth: breakpoints.$tablet-landscape, $nrCols: 2);
 }

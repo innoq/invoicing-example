@@ -1,4 +1,5 @@
 @use "innoq-styleguide/dist/sass/settings/colors" as colors;
+@use "../../assets/stylesheets/breakpoints" as breakpoints;
 
 /* Default behavior of navbar when not in the navbar-layout
 which moves the navbar to the left-hand side */
@@ -60,8 +61,7 @@ which moves the navbar to the left-hand side */
     z-index: 1;
   }
 
-  // TODO: move into a @tablet-and-up() mixin
-  @media (min-width: 35rem) {
+  @include breakpoints.for-tablet-portrait-up {
     grid-template-rows: auto;
     grid-template-columns: [navbar-start] 4rem auto [navbar-end] 1fr;
 
