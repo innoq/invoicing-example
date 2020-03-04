@@ -1,0 +1,16 @@
+@use "../../assets/stylesheets/helpers" as helpers;
+
+.icon {
+  &.icon-alarm {
+    @include helpers.icon-before("alarm.svg", inherit, 1.5rem);
+  }
+  &.icon-download {
+    @include helpers.icon-before("download.svg", inherit, 1.5rem);
+  }
+  &.icon-list-bulleted {
+    @include helpers.icon-before("format_list_bulleted.svg", inherit, 1.5rem);
+  }
+  &.icon-upload {
+    @include helpers.icon-before("upload.svg", inherit, 1.5rem);
+  }
+}

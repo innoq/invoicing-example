@@ -36,24 +36,25 @@ A `Navbar` component can contain any number of items. These are simply basic HTM
 ```jsx
 import { createElement } from "complate-stream";
 import Navbar, { NavbarLayout, NavbarItem } from "./app/components/navbar";
+import Icon from "./app/components/icon";
 
 <NavbarLayout>
   <Navbar>
-    <NavbarItem href="#">
-      <span>A</span>
-      <span>Apricots</span>
+    <NavbarItem href="#" current>
+      <Icon symbol="list-bulleted" />
+      Meine Aufgaben
     </NavbarItem>
     <NavbarItem href="#">
-      <span>B</span>
-      <span>Buttons</span>
+      <Icon symbol="upload" />
+      Rechnungserstellung
     </NavbarItem>
     <NavbarItem href="#">
-      <span>C</span>
-      <span>Cookies</span>
+      <Icon symbol="download" />
+      Zahlungseingang
     </NavbarItem>
     <NavbarItem href="#">
-      <span>D</span>
-      <span>Dogs</span>
+      <Icon symbol="alarm" />
+      Zahlungserinnerungen
     </NavbarItem>
   </Navbar>
   <main style="height: 300px; border: 1px solid black;">
@@ -68,24 +69,25 @@ Just instantiating the `Navbar` component outside of the navbar layout will posi
 ```jsx
 import { createElement } from "complate-stream";
 import Navbar, { NavbarItem } from "./app/components/navbar";
+import Icon from "./app/components/icon";
 
 <div>
   <Navbar>
-    <NavbarItem href="#">
-      <span>A</span>
-      <span>Apricots</span>
+    <NavbarItem href="#" current>
+      <Icon symbol="list-bulleted" />
+      Meine Aufgaben
     </NavbarItem>
     <NavbarItem href="#">
-      <span>B</span>
-      <span>Buttons</span>
+      <Icon symbol="upload" />
+      Rechnungserstellung
     </NavbarItem>
     <NavbarItem href="#">
-      <span>C</span>
-      <span>Cookies</span>
+      <Icon symbol="download" />
+      Zahlungseingang
     </NavbarItem>
     <NavbarItem href="#">
-      <span>D</span>
-      <span>Dogs</span>
+      <Icon symbol="alarm" />
+      Zahlungserinnerungen
     </NavbarItem>
   </Navbar>
   <main style="height: 300px; border: 1px solid black;">

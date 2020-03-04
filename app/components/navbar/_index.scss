@@ -18,17 +18,30 @@ which moves the navbar to the left-hand side */
 
   .navbar-item {
     display: grid;
-    align-items: center;
     grid-template-rows: 4rem;
     grid-template-columns: 1fr 0;
 
     .symbol {
-      justify-self: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .label {
       overflow: hidden;
+      display: flex;
+      align-items: center;
+      margin: 0 1rem;
     }
+
+    &.current {
+      .symbol {
+        background-color: colors.$brand-blue-75;
+      }
+      .label {
+        color: colors.$brand-red;
+      }
+    };
   }
 }
 
@@ -59,7 +72,7 @@ which moves the navbar to the left-hand side */
       grid-template-columns: 4rem var(--col-width);
 
       &:hover {
-        --col-width: auto;
+        --col-width: max-content;
       }
 
       .navbar-item {
@@ -69,10 +82,6 @@ which moves the navbar to the left-hand side */
         we can use subgrid instead of repeating it here.
         Currently only in Firefox supported, so we need both. */
         grid-template-columns: subgrid;
-
-        .label {
-          margin-right: 1rem;
-        }
       }
     }
 

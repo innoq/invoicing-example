@@ -15,24 +15,25 @@ import ButtonGroup from "./app/components/button-group";
 import MainLayout from "./app/components/main-layout";
 import Amount from "./app/components/amount";
 import ProgressBar from "./app/components/progress-bar";
+import Icon from "./app/components/icon";
 
 <NavbarLayout>
   <Navbar>
-    <NavbarItem href="#">
-      <span>A</span>
-      <span>Apricots</span>
+    <NavbarItem href="#" current>
+      <Icon symbol="list-bulleted" />
+      Meine Aufgaben
     </NavbarItem>
     <NavbarItem href="#">
-      <span>B</span>
-      <span>Buttons</span>
+      <Icon symbol="upload" />
+      Rechnungserstellung
     </NavbarItem>
     <NavbarItem href="#">
-      <span>C</span>
-      <span>Cookies</span>
+      <Icon symbol="download" />
+      Zahlungseingang
     </NavbarItem>
     <NavbarItem href="#">
-      <span>D</span>
-      <span>Dogs</span>
+      <Icon symbol="alarm" />
+      Zahlungserinnerungen
     </NavbarItem>
   </Navbar>
   <MainLayout>
@@ -46,9 +47,9 @@ import ProgressBar from "./app/components/progress-bar";
       <THead>
         <Tr>
           <CollapserTh label="Einträge auf/zuklappen" />
-          <TabelleHeader name="auftragsnr" label="Auftragsnr."  
+          <TabelleHeader name="auftragsnr" label="Auftragsnr."
             shortLabel="Auftrag" sorted="asc" />
-          <TabelleHeader name="saleorder" label="Sale Order Name"    
+          <TabelleHeader name="saleorder" label="Sale Order Name"
             shortLabel="Order" sorted="asc" />
           <TabelleHeader name="kunde" label="Kunde" sorted="asc" />
           <TabelleHeader name="principal" label="Principal"
