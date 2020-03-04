@@ -23,8 +23,9 @@
     border-color: colors.$brand-red;
     color: white;
 
-    @include helpers.hover-fill(colors.$brand-blue, white, white );
-    &:focus, &:hover {
+    @include helpers.hover-fill(colors.$brand-blue, white, white);
+    &:focus,
+    &:hover {
       border-color: colors.$brand-blue;
     }
   }
@@ -32,13 +33,18 @@
     border-color: colors.$brand-blue;
     color: colors.$brand-blue;
 
-    @include helpers.hover-fill(colors.$brand-red, colors.$brand-blue, colors.$brand-blue);
+    @include helpers.hover-fill(
+      colors.$brand-red,
+      colors.$brand-blue,
+      colors.$brand-blue
+    );
   }
   &.tertiary {
     border-color: colors.$brand-red;
     color: colors.$brand-red;
 
-    &:focus, &:hover {
+    &:focus,
+    &:hover {
       background-color: colors.$brand-red;
       color: white;
     }

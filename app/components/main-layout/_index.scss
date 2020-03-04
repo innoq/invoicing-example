@@ -13,7 +13,8 @@
 
   @media (min-width: 35rem) {
     display: grid;
-    grid-template-areas: "category buttons"
+    grid-template-areas:
+      "category buttons"
       "heading buttons"
       "main main";
     // Currently assumes a single child item
