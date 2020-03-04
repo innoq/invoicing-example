@@ -3,7 +3,7 @@
 @use "../../assets/stylesheets/spacers" as spacings;
 @use "../table" as table;
 
-@mixin responsive-behavior ($maxWidth, $nrCols) {
+@mixin responsive-behavior($maxWidth, $nrCols) {
   @media (max-width: #{$maxWidth}) {
     --nr-cols: #{$nrCols};
     thead {
@@ -28,7 +28,6 @@
     }
   }
 }
-
 
 /*
 Normally, we want to do "mobile-first" in the sense that we add behavior with
@@ -64,23 +63,23 @@ implement this way, because otherwise we would also have to reset all the old
     grid-template-columns: auto repeat(var(--nr-cols, auto));
     grid-column-gap: spacings.$spacer-xxs;
 
-    // For browsers without `subgrid`
     tr {
+      padding: spacings.$spacer-sm spacings.$spacer-xxs;
+      // For browsers without `subgrid`
       grid-template-columns: 0.5fr repeat(var(--nr-cols), 1fr);
       grid-column-gap: spacings.$spacer-xxs;
     }
 
-    thead, tbody, tr {
+    thead,
+    tbody,
+    tr {
       display: grid;
       grid-column: span calc(var(--nr-cols) + 1);
       grid-template-columns: subgrid;
     }
 
-    tr {
-      padding: spacings.$spacer-sm spacings.$spacer-xxs;
-    }
-
-    th, td {
+    th,
+    td {
       padding: 0;
     }
 

@@ -2,7 +2,9 @@
   "name": "example",
   "private": true,
   "scripts": {
-    "test": "eslint --cache app/assets/javascripts/**/*.js app/views/**/*.jsx app/components/**/*.jsx app/components/**/*.js",
+    "test": "npm run eslint && npm run stylelint",
+    "eslint": "eslint --cache app/assets/javascripts/**/*.js app/views/**/*.jsx app/components/**/*.jsx app/components/**/*.js",
+    "stylelint": "stylelint app/assets/stylesheets/**/*.scss app/components/**/*.scss",
     "compile": "faucet --fingerprint --compact",
     "start": "faucet --watch",
     "aiur": "aiur -t ./dist",
@@ -16,7 +18,11 @@
     "faucet-pipeline-jsx": "^2.0.10",
     "faucet-pipeline-sass": "^1.3.1",
     "faucet-pipeline-static": "^1.1.0",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "stylelint": "^13.2.0",
+    "stylelint-config-prettier": "^8.0.1",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-prettier": "^1.1.2"
   },
   "dependencies": {
     "@ungap/custom-elements-builtin": "^0.4.0",

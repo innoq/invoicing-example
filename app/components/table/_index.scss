@@ -15,7 +15,8 @@
   --border-color-td: #{colors.$brand-gray-50};
 
   border-collapse: collapse;
-  box-shadow: 0 5px 6px -7px rgba(0, 0, 0, 0.8), 0 2px 4px -5px rgb(0, 0, 0, 0.95);  
+  box-shadow: 0 5px 6px -7px rgba(0, 0, 0, 0.8),
+    0 2px 4px -5px rgb(0, 0, 0, 0.95);
   th {
     @include table-header-style();
     text-align: left;
