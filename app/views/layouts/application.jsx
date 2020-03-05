@@ -2,7 +2,7 @@
 import { createElement } from "complate-stream";
 import Flash from "../../components/flash";
 
-export default function ApplicationLayout({ title, content }, ...children) {
+export function ApplicationLayout({ title, content }, ...children) {
   let flash = rails.flash().to_h();
 
   return (

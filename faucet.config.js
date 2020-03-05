@@ -3,6 +3,13 @@ module.exports = {
     {
       source: "./app/assets/javascripts/application.js",
       target: "./public/assets/javascripts/application.js"
+    },
+    {
+      source: "./app/views/index.js",
+      // this is the directory that aiur writes to... Probably not a good idea
+      target: "./dist/views.js",
+      format: "CommonJS",
+      jsx: { pragma: "createElement" }
     }
   ],
 
@@ -26,5 +33,5 @@ module.exports = {
     webRoot: "./public"
   },
 
-  watchDirs: ["./app/assets", "./app/components"]
+  watchDirs: ["./app"]
 };

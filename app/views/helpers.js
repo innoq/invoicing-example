@@ -1,5 +1,3 @@
-/* global rails */
-
 /* Helper to get the name of a model
  * similar to the Rails helper:
  * Invoice.model_name.human(count: 2)

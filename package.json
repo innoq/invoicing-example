@@ -2,13 +2,16 @@
   "name": "example",
   "private": true,
   "scripts": {
-    "test": "npm run eslint && npm run stylelint",
+    "aiur": "aiur -t ./dist",
+    "aiur:watch": "aiur -t ./dist --watch --liveserve 0.0.0.0:4001",
+    "compile": "faucet --fingerprint --compact",
+    "compile:watch": "faucet --watch",
+    "server": "node app",
+    "server:watch": "nodemon -I -w app -w dist/bundle.js -x 'npm run server'",
+    "start": "npm-run-all --parallel server:watch compile:watch aiur:watch",
     "eslint": "eslint --cache app/assets/javascripts/**/*.js app/views/**/*.jsx app/components/**/*.jsx app/components/**/*.js",
     "stylelint": "stylelint app/assets/stylesheets/**/*.scss app/components/**/*.scss",
-    "compile": "faucet --fingerprint --compact",
-    "start": "faucet --watch",
-    "aiur": "aiur -t ./dist",
-    "aiur-dev": "aiur -t ./dist --watch --liveserve 0.0.0.0:4001"
+    "test": "npm run eslint && npm run stylelint"
   },
   "devDependencies": {
     "aiur": "moonglum/aiur#summit",
@@ -18,6 +21,8 @@
     "faucet-pipeline-jsx": "^2.0.10",
     "faucet-pipeline-sass": "^1.3.1",
     "faucet-pipeline-static": "^1.1.0",
+    "nodemon": "^2.0.2",
+    "npm-run-all": "^4.1.5",
     "prettier": "^1.19.1",
     "stylelint": "^13.2.0",
     "stylelint-config-prettier": "^8.0.1",
@@ -26,7 +31,10 @@
   },
   "dependencies": {
     "@ungap/custom-elements-builtin": "^0.4.0",
+    "complate-express": "^0.16.0",
     "complate-stream": "^0.16.9",
+    "express": "^4.17.1",
+    "faucet-pipeline-express": "^0.1.0",
     "innoq-styleguide": "^2.1.1",
     "tabelle": "^0.1.1",
     "uitil": "^2.5.0"
