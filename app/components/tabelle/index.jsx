@@ -3,7 +3,7 @@ import { createElement, Fragment } from "complate-stream";
 import Form from "../form";
 import Squishable from "../squishable";
 
-function TabelleArrows({ name, label, sorted }) {
+export function TabelleArrows({ name, label, sorted }) {
   return (
     <Fragment>
       <input
@@ -33,7 +33,7 @@ function TabelleArrows({ name, label, sorted }) {
   );
 }
 
-function TabelleFilter({ name, label, value }) {
+export function TabelleFilter({ name, label, value }) {
   return (
     <input
       class="tabelle-input"
