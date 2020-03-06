@@ -31,6 +31,9 @@ Application specific code
   font-family: typography.$font-family-sans-serif;
   font-size: typography.$font-size-md;
 }
+body {
+  margin: 0;
+}
 
 h1 {
   font-family: typography.$font-family-sans-serif-heavy;
