@@ -1,5 +1,3 @@
-@use "tabelle/lib/components/tabelle-header/tabelle-header";
-
 @use "../../assets/stylesheets/helpers" as helpers;
 @use "innoq-styleguide/dist/sass/settings/colors" as colors;
 
@@ -35,24 +33,37 @@
   }
 }
 
-.tabelle-header {
-  grid-template-rows: auto 1rem auto;
-  // Adding a minmax makes it possible to squish the headers if necessary
-  grid-template-columns: minmax(2rem, 1fr) 1rem;
-  grid-column-gap: 0.25rem;
-
-  .tabelle-arrow--asc {
-    align-self: end;
-  }
-
-  .truncatable {
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-}
-
 .tabelle-input {
   max-width: 100%;
   border: 1px solid colors.$brand-blue-75;
   padding: 0.25rem 0.5rem;
+}
+
+.tabelle-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1rem 1rem auto;
+  grid-template-areas:
+    "header arrow-asc"
+    "header arrow-desc"
+    "search search";
+
+  .header {
+    grid-area: header;
+    align-self: center;
+  }
+
+  .tabelle-arrow--asc {
+    grid-area: arrow-asc;
+  }
+
+  .tabelle-arrow--desc {
+    grid-area: arrow-desc;
+  }
+
+  input,
+  select,
+  .tabelle-input {
+    grid-area: search;
+  }
 }

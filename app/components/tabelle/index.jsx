@@ -53,12 +53,8 @@ export function TabelleHeader({ name, label, shortLabel, value, sorted }) {
   );
 
   return (
-    <th scope="col" role="columnheader" aria-labelledby={`${name}_group`}>
-      <div
-        class="tabelle-header"
-        role="group"
-        aria-label={`Sort and filter ${label}`}
-      >
+    <th scope="col" role="columnheader" aria-label={`Sort and filter ${label}`}>
+      <div class="tabelle-header">
         <span
           class={`header ${shortLabel ? "" : "truncatable"}`}
           id={`${name}_group`}
