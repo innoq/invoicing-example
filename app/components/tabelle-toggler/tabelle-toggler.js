@@ -5,7 +5,10 @@ class TabelleToggler extends HTMLButtonElement {
   connectedCallback() {
     this.removeAttribute("hidden");
     this.initialExpand();
-    this.addEventListener("click", this.toggle.bind(this));
+    this.addEventListener("click", ev => {
+      ev.preventDefault();
+      this.toggle();
+    });
     window.addEventListener(
       "resize",
       debounce(300, this.initialExpand.bind(this))
