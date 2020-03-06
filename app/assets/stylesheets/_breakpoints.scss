@@ -1,19 +1,22 @@
 // Adapted from:
 // https://www.freecodecamp.org/news/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862/
-// @mixin for-phone-only {
-//   @media (max-width: 599px) { @content; }
-// }
 
 $tablet-portrait: 40rem;
 $tablet-landscape: 60rem;
 $desktop: 75rem;
 
 @mixin for-tablet-portrait-up {
-  @media (min-width: $tablet-portrait) { @content; }
+  @media (min-width: $tablet-portrait) {
+    @content;
+  }
 }
 @mixin for-tablet-landscape-up {
-  @media (min-width: $tablet-landscape) { @content; }
+  @media (min-width: $tablet-landscape) {
+    @content;
+  }
 }
 @mixin for-desktop-up {
-  @media (min-width: $desktop) { @content; }
+  @media (min-width: $desktop) {
+    @content;
+  }
 }

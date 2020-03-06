@@ -45,7 +45,7 @@ which moves the navbar to the left-hand side */
       .label {
         color: colors.$brand-red;
       }
-    };
+    }
     &.brand {
       .label {
         @include helpers.visually-hidden();
@@ -61,7 +61,8 @@ which moves the navbar to the left-hand side */
         margin: 0 spacers.$spacer-xs;
         border-bottom: 1px solid colors.$brand-blue-75;
       }
-      .symbol, .label {
+      .symbol,
+      .label {
         grid-row-start: item-start;
       }
     }

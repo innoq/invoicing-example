@@ -90,5 +90,8 @@ implement this way, because otherwise we would also have to reset all the old
     }
   }
   @include responsive-behavior($maxWidth: breakpoints.$desktop, $nrCols: 4);
-  @include responsive-behavior($maxWidth: breakpoints.$tablet-landscape, $nrCols: 2);
+  @include responsive-behavior(
+    $maxWidth: breakpoints.$tablet-landscape,
+    $nrCols: 2
+  );
 }
