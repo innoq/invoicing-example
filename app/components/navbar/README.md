@@ -40,12 +40,6 @@ import { NavbarLayout } from "./app/components/navbar";
   <div class="navbar">
     <p style="color: white;">This is the region for the navbar.</p>
   </div>
-<<<<<<< 8686bbf2667df48a1ea7b8a18f1057dc3c03c868
-  <div class="secondary-navbar">
-    <p style="color: white;">This is the region for the secondary navbar.</p>
-  </div>
-=======
->>>>>>> Improve documentation of Tabelle, Navbar, and Spacers
   <main style="height: 300px; background-color: var(--background-color);">
     This is the region for the main content area.
   </main>
