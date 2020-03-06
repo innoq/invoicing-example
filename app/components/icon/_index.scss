@@ -4,11 +4,29 @@
   &.icon-alarm {
     @include helpers.icon-before("alarm.svg", inherit, 1.5rem);
   }
+  &.icon-bolt {
+    @include helpers.icon-before("bolt.svg", inherit, 1.5rem);
+  }
+  &.icon-crown {
+    @include helpers.icon-before("crown.svg", inherit, 1.5rem);
+  }
+  &.icon-dots {
+    @include helpers.icon-before("dots.svg", inherit, 1.5rem);
+  }
   &.icon-download {
     @include helpers.icon-before("download.svg", inherit, 1.5rem);
   }
   &.icon-list-bulleted {
     @include helpers.icon-before("format_list_bulleted.svg", inherit, 1.5rem);
+  }
+  &.icon-pencil {
+    @include helpers.icon-before("pencil.svg", inherit, 1.5rem);
+  }
+  &.icon-plane {
+    @include helpers.icon-before("plane.svg", inherit, 1.5rem);
+  }
+  &.icon-snooze {
+    @include helpers.icon-before("snooze.svg", inherit, 1.5rem);
   }
   &.icon-upload {
     @include helpers.icon-before("upload.svg", inherit, 1.5rem);
