@@ -6,23 +6,24 @@
 
 /* Default behavior of navbar when not in the navbar-layout
 which moves the navbar to the left-hand side */
-.navbar {
-  background-color: colors.$brand-blue;
+.navbar,
+.secondary-navbar {
+  background-color: var(--background-color);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
 
   a {
-    color: colors.$brand-blue-25;
+    color: var(--text-color);
     text-decoration: none;
 
     &:hover {
-      background-color: colors.$brand-blue-75;
+      background-color: var(--hover-color);
     }
   }
 
   .navbar-item {
     display: grid;
-    grid-template-rows: 4rem;
+    grid-template-rows: var(--row-width);
     grid-template-columns: 1fr 0;
 
     .symbol {
@@ -37,71 +38,46 @@ which moves the navbar to the left-hand side */
       align-items: center;
       margin: 0 1rem;
     }
+  }
+}
 
-    &.current {
-      .symbol {
-        background-color: colors.$brand-blue-75;
-      }
-      .label {
-        color: colors.$brand-red;
-      }
+.navbar {
+  --background-color: #{colors.$brand-blue};
+  --hover-color: #{colors.$brand-blue-75};
+  --text-color: #{colors.$brand-blue-25};
+  --row-width: 4rem;
+
+  .current {
+    .symbol {
+      background-color: colors.$brand-blue-75;
     }
-    &.brand {
-      .label {
-        @include helpers.visually-hidden();
-      }
-      &:hover {
-        background-color: colors.$brand-blue;
-      }
+    .label {
+      color: colors.$brand-red;
     }
-    &.brand + .navbar-item {
-      grid-template-rows: 1px [item-start] calc(4rem - 1px);
-      &::before {
-        content: "";
-        margin: 0 spacers.$spacer-xs;
-        border-bottom: 1px solid colors.$brand-blue-75;
-      }
-      .symbol,
-      .label {
-        grid-row-start: item-start;
-      }
+  }
+  .brand {
+    .label {
+      @include helpers.visually-hidden();
+    }
+    &:hover {
+      background-color: colors.$brand-blue;
     }
   }
 }
 .secondary-navbar {
-  background-color: colors.$brand-gray-75;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
-  a {
-    color: colors.$brand-gray-25;
-    text-decoration: none;
+  --background-color: #{colors.$brand-gray-75};
+  --hover-color: #{colors.$brand-gray-50};
+  --text-color: #{colors.$brand-gray-25};
+  --row-width: 3rem;
 
-    &:hover {
-      background-color: colors.$brand-gray-50;
-    }
-  }
   .navbar-item {
-    display: grid;
-    grid-template-rows: 3rem;
-    grid-template-columns: 1fr 0;
-
-    .symbol {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
     .label {
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      margin: 0 1rem;
       font-size: typography.$font-size-sm;
     }
 
     &.current {
       color: white;
-    };
+    }
   }
 }
 
@@ -118,6 +94,12 @@ which moves the navbar to the left-hand side */
     bottom: 0;
     grid-row-start: navbar-start;
     z-index: 1;
+
+    .brand {
+      width: 0;
+      overflow: hidden;
+      position: absolute;
+    }
   }
 
   .secondary-navbar {
@@ -149,19 +131,29 @@ which moves the navbar to the left-hand side */
         Currently only in Firefox supported, so we need both. */
         grid-template-columns: subgrid;
       }
-
       .brand {
-        width: 0;
+        position: static;
+        width: auto;
       }
+    }
+    .brand + .navbar-item {
+      --border-color: var(--hover-color);
+      grid-template-rows: 1px [item-start] calc(4rem - 1px);
+      &::before {
+        content: "";
+        margin: 0 spacers.$spacer-xs;
+        border-bottom: 1px solid var(--border-color);
+      }
+      .symbol,
+      .label {
+        grid-row-start: item-start;
+      }
+    }
+    .brand + .current {
+      --border-color: transparent;
     }
     .secondary-navbar {
       display: flex;
-      .navbar-item:first-child {
-        margin-left: auto;
-      }
-      .navbar-item:last-child {
-        margin-right: auto;
-      }
 
       .navbar-item {
         grid-template-rows: auto auto;
@@ -177,6 +169,12 @@ which moves the navbar to the left-hand side */
           justify-self: center;
           align-self: start;
         }
+      }
+      .navbar-item:first-child {
+        margin-left: auto;
+      }
+      .navbar-item:last-child {
+        margin-right: auto;
       }
     }
 
