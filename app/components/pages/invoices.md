@@ -8,7 +8,7 @@ import { createElement } from "complate-stream";
 import Table, { TBody, THead, Tr, Td, CollapserTh, CollapserTd } from "./app/components/table-responsive";
 import TabelleToggler from "./app/components/tabelle-toggler";
 import Tabelle, { TabelleHeader } from "./app/components/tabelle";
-import Navbar, { NavbarLayout, NavbarItem } from "./app/components/navbar";
+import Navbar, { NavbarLayout, NavbarItem, SecondaryNavbar } from "./app/components/navbar";
 import Button from "./app/components/button";
 import PageCategory from "./app/components/page-category";
 import ButtonGroup from "./app/components/button-group";
@@ -35,7 +35,33 @@ import Icon from "./app/components/icon";
       <Icon symbol="alarm" />
       Zahlungserinnerungen
     </NavbarItem>
+    <NavbarItem href="#">
+      <Icon symbol="dots" />
+      Mehr
+    </NavbarItem>
   </Navbar>
+  <SecondaryNavbar>
+    <NavbarItem current>
+      <Icon symbol="snooze" />
+      Abwarten
+    </NavbarItem>
+    <NavbarItem>
+      <Icon symbol="bolt" />
+      Nachhacken
+    </NavbarItem>
+    <NavbarItem>
+      <Icon symbol="pencil" />
+      Nachhacken
+    </NavbarItem>
+    <NavbarItem>
+      <Icon symbol="crown" />
+      Freigeben lassen
+    </NavbarItem>
+    <NavbarItem>
+      <Icon symbol="plane" />
+      Versenden
+    </NavbarItem>
+  </SecondaryNavbar>
   <MainLayout>
     <PageCategory>Rechnungserstellung</PageCategory>
     <h1>Keine freizugebenden Leistungen</h1>

@@ -1,5 +1,6 @@
 @use "innoq-styleguide/dist/sass/settings/colors" as colors;
 @use "../../assets/stylesheets/breakpoints" as breakpoints;
+@use "../../assets/stylesheets/typography" as typography;
 
 /* Default behavior of navbar when not in the navbar-layout
 which moves the navbar to the left-hand side */
@@ -45,12 +46,48 @@ which moves the navbar to the left-hand side */
     };
   }
 }
+.secondary-navbar {
+  background-color: colors.$brand-gray-75;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
+  a {
+    color: colors.$brand-gray-25;
+    text-decoration: none;
+
+    &:hover {
+      background-color: colors.$brand-gray-50;
+    }
+  }
+  .navbar-item {
+    display: grid;
+    grid-template-rows: 3rem;
+    grid-template-columns: 1fr 0;
+
+    .symbol {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .label {
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      margin: 0 1rem;
+      font-size: typography.$font-size-sm;
+    }
+
+    &.current {
+      color: white;
+    };
+  }
+}
 
 .navbar-layout {
   display: grid;
   /* We expect only the `main` element as a child of this component
   apart from the navbar */
-  grid-template-rows: 1fr [navbar-start] auto;
+  grid-template-rows: 1fr [secondary-navbar-start] 3rem [navbar-start] auto;
   min-height: 100vh;
 
   .navbar {
@@ -61,12 +98,19 @@ which moves the navbar to the left-hand side */
     z-index: 1;
   }
 
+  .secondary-navbar {
+    position: sticky;
+    bottom: 4rem;
+    grid-row-start: secondary-navbar-start;
+    z-index: 1;
+  }
+
   @include breakpoints.for-tablet-portrait-up {
-    grid-template-rows: auto;
+    grid-template-rows: [secondary-navbar-start] 4rem auto [main-content-end];
     grid-template-columns: [navbar-start] 4rem auto [navbar-end] 1fr;
 
     .navbar {
-      grid-row-start: auto;
+      grid-row: secondary-navbar-start / main-content-end;
       grid-column: navbar-start / navbar-end;
       grid-template-rows: repeat(auto-fill, 4rem);
       grid-template-columns: 4rem var(--col-width);
@@ -82,6 +126,31 @@ which moves the navbar to the left-hand side */
         we can use subgrid instead of repeating it here.
         Currently only in Firefox supported, so we need both. */
         grid-template-columns: subgrid;
+      }
+    }
+    .secondary-navbar {
+      display: flex;
+      .navbar-item:first-child {
+        margin-left: auto;
+      }
+      .navbar-item:last-child {
+        margin-right: auto;
+      }
+
+      .navbar-item {
+        grid-template-rows: auto auto;
+        grid-template-columns: auto;
+        align-items: center;
+        max-width: 15rem;
+        flex-grow: 1;
+
+        .symbol {
+          align-self: end;
+        }
+        .label {
+          justify-self: center;
+          align-self: start;
+        }
       }
     }
 

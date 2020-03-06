@@ -8,6 +8,10 @@ export default function Navbar(_params, ...children) {
   return <nav class="navbar">{children}</nav>;
 }
 
+export function SecondaryNavbar(_params, ...children) {
+  return <nav class="secondary-navbar">{children}</nav>;
+}
+
 export function NavbarItem({ href, current }, ...children) {
   let [first, ...rest] = children;
   return (
