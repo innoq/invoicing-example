@@ -41,8 +41,9 @@
 
 .tabelle-header {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(2rem, 1fr) 1rem;
   grid-template-rows: 1rem 1rem auto;
+  grid-column-gap: 0.25rem;
   grid-template-areas:
     "header arrow-asc"
     "header arrow-desc"
