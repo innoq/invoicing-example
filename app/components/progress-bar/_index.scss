@@ -1,0 +1,38 @@
+@use "../../assets/stylesheets/spacers" as spacings;
+@use "innoq-styleguide/dist/sass/settings/colors" as colors;
+
+.progress-bar {
+  color: colors.$brand-blue-50;
+  display: flex;
+  flex-direction: column;
+  progress {
+    appearance: none;
+    height: spacings.$spacer-xxs;
+    border-radius: 1rem;
+    width: 100%;
+  }
+
+  ::-webkit-progress-bar {
+    background-color: colors.$brand-gray-25;
+    border-radius: 1rem;
+  }
+  ::-webkit-progress-value {
+    border-radius: 1rem;
+    background-color: colors.$brand-red;
+  }
+  ::-moz-progress-bar {
+    border-radius: 1rem;
+    background-color: colors.$brand-red;
+  }
+
+  // I'd prefer to have a modifier with some meaning here, but I'm not sure
+  // when which progress bar is used.
+  &.green {
+    ::-webkit-progress-value {
+      background-color: colors.$brand-green;
+    }
+    ::-moz-progress-bar {
+      background-color: colors.$brand-green;
+    }
+  }
+}

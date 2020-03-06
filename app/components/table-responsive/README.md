@@ -29,6 +29,7 @@ import Table, { TBody, THead, Tr, Td, CollapserTh, CollapserTd } from "./app/com
 import TabelleToggler from "./app/components/tabelle-toggler";
 import Tabelle, { TabelleHeader } from "./app/components/tabelle";
 import Amount from "./app/components/amount";
+import ProgressBar from "./app/components/progress-bar";
 
 <div style="background-color: var(--background-color); padding: 1rem;">
   <h1 class="sr-only">Responsive Table</h1>
@@ -57,8 +58,12 @@ import Amount from "./app/components/amount";
         <Td column="Sale Order Name">Quality-focused bandwidth-monitored parallelism</Td>
         <Td column="Kunde" modifier="muted">Stiedemann, Wolff and Pachocha</Td>
         <Td column="Principal" modifier="muted">Jörg Müller</Td>
-        <Td column="Freigaben" modifier="muted">2 / 3</Td>
-        <Td column="Status" modifier="muted">1 / 5</Td>
+        <Td column="Freigaben" modifier="muted">
+          <ProgressBar value="2" max="3" />
+        </Td>
+        <Td column="Status" modifier="muted">
+          <ProgressBar modifier="green" value="1" max="5" />
+        </Td>
         <Td column="Nettopreis">
           <Amount>2.575,00 €</Amount>
         </Td>

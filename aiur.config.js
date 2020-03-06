@@ -12,7 +12,8 @@ module.exports = {
         amount: "./app/components/amount/README.md",
         button: "./app/components/button/README.md",
         flash: "./app/components/flash/README.md",
-        page_category: "./app/components/page-category/README.md"
+        page_category: "./app/components/page-category/README.md",
+        progress_bar: "./app/components/progress-bar/README.md"
       }
     },
     molecules: {
