@@ -21,3 +21,13 @@ export function NavbarItem({ href, current }, ...children) {
     </a>
   );
 }
+
+export function NavbarBrand({ href }, ...children) {
+  let [first, ...rest] = children;
+  return (
+    <a class={`navbar-item brand`} href={href}>
+      <div class="symbol">{first}</div>
+      <div class="label">{rest}</div>
+    </a>
+  );
+}

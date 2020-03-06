@@ -55,6 +55,15 @@ import Icon from "./app/components/icon";
 <Icon symbol="list-bulleted" />
 ```
 
+_INNOQ_
+
+```jsx
+import { createElement } from "complate-stream";
+import Icon from "./app/components/icon";
+
+<Icon symbol="INNOQ" />
+```
+
 _pencil_
 
 ```jsx

@@ -38,16 +38,20 @@ A `Navbar` component can contain any number of items. These are simply basic HTM
 
 ```jsx
 import { createElement } from "complate-stream";
-import Navbar, { NavbarLayout, NavbarItem, SecondaryNavbar } from "./app/components/navbar";
+import Navbar, { NavbarLayout, NavbarItem, SecondaryNavbar, NavbarBrand } from "./app/components/navbar";
 import Icon from "./app/components/icon";
 
 <NavbarLayout>
   <Navbar>
-    <NavbarItem href="#" current>
+    <NavbarBrand href="#">
+      <Icon symbol="INNOQ" />
+      Zur Rechnologe Hauptseite
+    </NavbarBrand>
+    <NavbarItem href="#">
       <Icon symbol="list-bulleted" />
       Meine Aufgaben
     </NavbarItem>
-    <NavbarItem href="#">
+    <NavbarItem href="#" current>
       <Icon symbol="upload" />
       Rechnungserstellung
     </NavbarItem>

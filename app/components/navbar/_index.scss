@@ -1,6 +1,8 @@
 @use "innoq-styleguide/dist/sass/settings/colors" as colors;
 @use "../../assets/stylesheets/breakpoints" as breakpoints;
 @use "../../assets/stylesheets/typography" as typography;
+@use "../../assets/stylesheets/helpers" as helpers;
+@use "../../assets/stylesheets/spacers" as spacers;
 
 /* Default behavior of navbar when not in the navbar-layout
 which moves the navbar to the left-hand side */
@@ -44,6 +46,25 @@ which moves the navbar to the left-hand side */
         color: colors.$brand-red;
       }
     };
+    &.brand {
+      .label {
+        @include helpers.visually-hidden();
+      }
+      &:hover {
+        background-color: colors.$brand-blue;
+      }
+    }
+    &.brand + .navbar-item {
+      grid-template-rows: 1px [item-start] calc(4rem - 1px);
+      &::before {
+        content: "";
+        margin: 0 spacers.$spacer-xs;
+        border-bottom: 1px solid colors.$brand-blue-75;
+      }
+      .symbol, .label {
+        grid-row-start: item-start;
+      }
+    }
   }
 }
 .secondary-navbar {
@@ -126,6 +147,10 @@ which moves the navbar to the left-hand side */
         we can use subgrid instead of repeating it here.
         Currently only in Firefox supported, so we need both. */
         grid-template-columns: subgrid;
+      }
+
+      .brand {
+        width: 0;
       }
     }
     .secondary-navbar {

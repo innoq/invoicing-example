@@ -8,7 +8,7 @@ import { createElement } from "complate-stream";
 import Table, { TBody, THead, Tr, Td, CollapserTh, CollapserTd } from "./app/components/table-responsive";
 import TabelleToggler from "./app/components/tabelle-toggler";
 import Tabelle, { TabelleHeader } from "./app/components/tabelle";
-import Navbar, { NavbarLayout, NavbarItem, SecondaryNavbar } from "./app/components/navbar";
+import Navbar, { NavbarLayout, NavbarItem, SecondaryNavbar, NavbarBrand } from "./app/components/navbar";
 import Button from "./app/components/button";
 import PageCategory from "./app/components/page-category";
 import ButtonGroup from "./app/components/button-group";
@@ -19,6 +19,10 @@ import Icon from "./app/components/icon";
 
 <NavbarLayout>
   <Navbar>
+    <NavbarBrand href="#">
+      <Icon symbol="INNOQ" />
+      Zur Rechnologe Hauptseite
+    </NavbarBrand>
     <NavbarItem href="#" current>
       <Icon symbol="list-bulleted" />
       Meine Aufgaben
