@@ -1,8 +1,9 @@
 @mixin icon-before($svg-path, $color, $height: 1rem) {
   &::before {
+    color: $color;
     width: $height;
     height: $height;
-    background-color: $color;
+    background-color: currentColor;
     display: block;
     content: " ";
     mask-image: asset-url($svg-path);

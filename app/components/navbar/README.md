@@ -22,7 +22,10 @@ import { NavbarLayout } from "./app/components/navbar";
   <div class="navbar">
     <p style="color: white;">This is the region for the navbar.</p>
   </div>
-  <main style="height: 300px; border: 1px solid black;">
+  <div class="secondary-navbar">
+    <p style="color: white;">This is the region for the secondary navbar.</p>
+  </div>
+  <main style="height: 300px; background-color: var(--background-color);">
     This is the region for the main content area.
   </main>
 </NavbarLayout>
@@ -35,28 +38,117 @@ A `Navbar` component can contain any number of items. These are simply basic HTM
 
 ```jsx
 import { createElement } from "complate-stream";
-import Navbar, { NavbarLayout, NavbarItem } from "./app/components/navbar";
+import Navbar, { NavbarLayout, NavbarItem, SecondaryNavbar, NavbarBrand } from "./app/components/navbar";
+import Icon from "./app/components/icon";
 
 <NavbarLayout>
   <Navbar>
+    <NavbarBrand href="#">
+      <Icon symbol="INNOQ" />
+      Zur Rechnologe Hauptseite
+    </NavbarBrand>
     <NavbarItem href="#">
-      <span>A</span>
-      <span>Apricots</span>
+      <Icon symbol="list-bulleted" />
+      Meine Aufgaben
+    </NavbarItem>
+    <NavbarItem href="#" current>
+      <Icon symbol="upload" />
+      Rechnungserstellung
     </NavbarItem>
     <NavbarItem href="#">
-      <span>B</span>
-      <span>Buttons</span>
+      <Icon symbol="download" />
+      Zahlungseingang
     </NavbarItem>
     <NavbarItem href="#">
-      <span>C</span>
-      <span>Cookies</span>
+      <Icon symbol="alarm" />
+      Zahlungserinnerungen
     </NavbarItem>
     <NavbarItem href="#">
-      <span>D</span>
-      <span>Dogs</span>
+      <Icon symbol="dots" />
+      Mehr
     </NavbarItem>
   </Navbar>
-  <main style="height: 300px; border: 1px solid black;">
+  <SecondaryNavbar>
+    <NavbarItem current>
+      <Icon symbol="snooze" />
+      Abwarten
+    </NavbarItem>
+    <NavbarItem>
+      <Icon symbol="bolt" />
+      Nachhacken
+    </NavbarItem>
+    <NavbarItem>
+      <Icon symbol="pencil" />
+      Nachhacken
+    </NavbarItem>
+    <NavbarItem>
+      <Icon symbol="crown" />
+      Freigeben lassen
+    </NavbarItem>
+    <NavbarItem>
+      <Icon symbol="plane" />
+      Versenden
+    </NavbarItem>
+  </SecondaryNavbar>
+  <main style="height: 300px; background-color: var(--background-color);">
+    This is the region for the main content area.
+  </main>
+</NavbarLayout>
+```
+
+### Mobile Viewport
+
+```jsx width=320
+import { createElement } from "complate-stream";
+import Navbar, { NavbarLayout, NavbarItem, SecondaryNavbar } from "./app/components/navbar";
+import Icon from "./app/components/icon";
+
+<NavbarLayout>
+  <Navbar>
+    <NavbarItem href="#" current>
+      <Icon symbol="list-bulleted" />
+      Meine Aufgaben
+    </NavbarItem>
+    <NavbarItem href="#">
+      <Icon symbol="upload" />
+      Rechnungserstellung
+    </NavbarItem>
+    <NavbarItem href="#">
+      <Icon symbol="download" />
+      Zahlungseingang
+    </NavbarItem>
+    <NavbarItem href="#">
+      <Icon symbol="alarm" />
+      Zahlungserinnerungen
+    </NavbarItem>
+    <NavbarItem href="#">
+      <Icon symbol="dots" />
+      Mehr
+    </NavbarItem>
+  </Navbar>
+  <SecondaryNavbar>
+    <NavbarItem>
+      <Icon symbol="snooze" />
+      Abwarten
+    </NavbarItem>
+    <NavbarItem>
+      <Icon symbol="bolt" />
+      Nachhacken
+    </NavbarItem>
+    <NavbarItem>
+      <Icon symbol="pencil" />
+      Nachhacken
+    </NavbarItem>
+    <NavbarItem>
+      <Icon symbol="crown" />
+      Freigeben lassen
+    </NavbarItem>
+    <NavbarItem>
+      <Icon symbol="plane" />
+      Versenden
+    </NavbarItem>
+  </SecondaryNavbar>
+  <main style="height: 300px; background-color: var(--background-color);">
     This is the region for the main content area.
   </main>
 </NavbarLayout>
@@ -67,28 +159,55 @@ Just instantiating the `Navbar` component outside of the navbar layout will posi
 
 ```jsx
 import { createElement } from "complate-stream";
-import Navbar, { NavbarItem } from "./app/components/navbar";
+import Navbar, { NavbarItem, SecondaryNavbar } from "./app/components/navbar";
+import Icon from "./app/components/icon";
 
 <div>
   <Navbar>
-    <NavbarItem href="#">
-      <span>A</span>
-      <span>Apricots</span>
+    <NavbarItem href="#" current>
+      <Icon symbol="list-bulleted" />
+      Meine Aufgaben
     </NavbarItem>
     <NavbarItem href="#">
-      <span>B</span>
-      <span>Buttons</span>
+      <Icon symbol="upload" />
+      Rechnungserstellung
     </NavbarItem>
     <NavbarItem href="#">
-      <span>C</span>
-      <span>Cookies</span>
+      <Icon symbol="download" />
+      Zahlungseingang
     </NavbarItem>
     <NavbarItem href="#">
-      <span>D</span>
-      <span>Dogs</span>
+      <Icon symbol="alarm" />
+      Zahlungserinnerungen
+    </NavbarItem>
+    <NavbarItem href="#">
+      <Icon symbol="dots" />
+      Mehr
     </NavbarItem>
   </Navbar>
-  <main style="height: 300px; border: 1px solid black;">
+  <SecondaryNavbar>
+    <NavbarItem>
+      <Icon symbol="snooze" />
+      Abwarten
+    </NavbarItem>
+    <NavbarItem>
+      <Icon symbol="bolt" />
+      Nachhacken
+    </NavbarItem>
+    <NavbarItem>
+      <Icon symbol="pencil" />
+      Nachhacken
+    </NavbarItem>
+    <NavbarItem>
+      <Icon symbol="crown" />
+      Freigeben lassen
+    </NavbarItem>
+    <NavbarItem>
+      <Icon symbol="plane" />
+      Versenden
+    </NavbarItem>
+  </SecondaryNavbar>
+  <main style="height: 300px; background-color: var(--background-color);">
     This is the region for the main content area.
   </main>
 </div>

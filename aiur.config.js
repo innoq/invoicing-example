@@ -12,6 +12,7 @@ module.exports = {
         amount: "./app/components/amount/README.md",
         button: "./app/components/button/README.md",
         flash: "./app/components/flash/README.md",
+        icon: "./app/components/icon/README.md",
         page_category: "./app/components/page-category/README.md",
         progress_bar: "./app/components/progress-bar/README.md"
       }
@@ -45,10 +46,12 @@ module.exports = {
   },
 
   snippetAssets: {
-    js: [{
-      source: "./app/assets/javascripts/application.js",
-      target: "./application.js"
-    }],
+    js: [
+      {
+        source: "./app/assets/javascripts/application.js",
+        target: "./application.js"
+      }
+    ],
     sass: [
       {
         source: "./app/assets/stylesheets/application.scss",

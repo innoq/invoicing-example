@@ -8,33 +8,64 @@ import { createElement } from "complate-stream";
 import Table, { TBody, THead, Tr, Td, CollapserTh, CollapserTd } from "./app/components/table-responsive";
 import TabelleToggler from "./app/components/tabelle-toggler";
 import Tabelle, { TabelleHeader } from "./app/components/tabelle";
-import Navbar, { NavbarLayout, NavbarItem } from "./app/components/navbar";
+import Navbar, { NavbarLayout, NavbarItem, SecondaryNavbar, NavbarBrand } from "./app/components/navbar";
 import Button from "./app/components/button";
 import PageCategory from "./app/components/page-category";
 import ButtonGroup from "./app/components/button-group";
 import MainLayout from "./app/components/main-layout";
 import Amount from "./app/components/amount";
 import ProgressBar from "./app/components/progress-bar";
+import Icon from "./app/components/icon";
 
 <NavbarLayout>
   <Navbar>
-    <NavbarItem href="#">
-      <span>A</span>
-      <span>Apricots</span>
+    <NavbarBrand href="#">
+      <Icon symbol="INNOQ" />
+      Zur Rechnologe Hauptseite
+    </NavbarBrand>
+    <NavbarItem href="#" current>
+      <Icon symbol="list-bulleted" />
+      Meine Aufgaben
     </NavbarItem>
     <NavbarItem href="#">
-      <span>B</span>
-      <span>Buttons</span>
+      <Icon symbol="upload" />
+      Rechnungserstellung
     </NavbarItem>
     <NavbarItem href="#">
-      <span>C</span>
-      <span>Cookies</span>
+      <Icon symbol="download" />
+      Zahlungseingang
     </NavbarItem>
     <NavbarItem href="#">
-      <span>D</span>
-      <span>Dogs</span>
+      <Icon symbol="alarm" />
+      Zahlungserinnerungen
+    </NavbarItem>
+    <NavbarItem href="#">
+      <Icon symbol="dots" />
+      Mehr
     </NavbarItem>
   </Navbar>
+  <SecondaryNavbar>
+    <NavbarItem current>
+      <Icon symbol="snooze" />
+      Abwarten
+    </NavbarItem>
+    <NavbarItem>
+      <Icon symbol="bolt" />
+      Nachhacken
+    </NavbarItem>
+    <NavbarItem>
+      <Icon symbol="pencil" />
+      Nachhacken
+    </NavbarItem>
+    <NavbarItem>
+      <Icon symbol="crown" />
+      Freigeben lassen
+    </NavbarItem>
+    <NavbarItem>
+      <Icon symbol="plane" />
+      Versenden
+    </NavbarItem>
+  </SecondaryNavbar>
   <MainLayout>
     <PageCategory>Rechnungserstellung</PageCategory>
     <h1>Keine freizugebenden Leistungen</h1>
@@ -46,9 +77,9 @@ import ProgressBar from "./app/components/progress-bar";
       <THead>
         <Tr>
           <CollapserTh label="Einträge auf/zuklappen" />
-          <TabelleHeader name="auftragsnr" label="Auftragsnr."  
+          <TabelleHeader name="auftragsnr" label="Auftragsnr."
             shortLabel="Auftrag" sorted="asc" />
-          <TabelleHeader name="saleorder" label="Sale Order Name"    
+          <TabelleHeader name="saleorder" label="Sale Order Name"
             shortLabel="Order" sorted="asc" />
           <TabelleHeader name="kunde" label="Kunde" sorted="asc" />
           <TabelleHeader name="principal" label="Principal"
