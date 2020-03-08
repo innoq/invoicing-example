@@ -14,7 +14,11 @@ some of our favorite tools:
 * tabelle
 * Custom Elements
 
-## Setup (without Docker)
+## Setup
+
+[Install Node.js](https://nodejs.org/en/download/)
+
+In this directory run:
 
 ```
 npm i
