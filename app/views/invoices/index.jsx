@@ -28,7 +28,9 @@ export function InvoicesIndex({
   assetURL,
   query,
   sortParameter,
-  order
+  order,
+  action = "/",
+  javascript = true
 }) {
   return (
     <html>
@@ -93,7 +95,7 @@ export function InvoicesIndex({
               <Button modifier="tertiary">Faule erinnern</Button>
               <Button>Neue Rechnung</Button>
             </ButtonGroup>
-            <Tabelle action="/">
+            <Tabelle action={action}>
               <Table>
                 <THead>
                   <Tr>
@@ -192,7 +194,7 @@ export function InvoicesIndex({
             </Tabelle>
           </MainLayout>
         </NavbarLayout>
-        <script src={assetURL("application.js")} />
+        {javascript && <script src={assetURL("application.js")} />}
       </body>
     </html>
   );
