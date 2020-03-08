@@ -6,6 +6,7 @@ module.exports = {
   pages: {
     "": "./app/components/README.md",
     colors: "./app/components/colors.md",
+    spacers: "./app/components/spacers.md",
     atoms: {
       file: "./app/components/ATOMS.md",
       children: {

@@ -1,4 +1,5 @@
 @use "innoq-styleguide/dist/sass/settings/colors" as colors;
+@use "./spacers" as spacers;
 
 @mixin color-definition($color-name, $hex) {
   &.#{$color-name} {
@@ -48,8 +49,29 @@ my-color {
   }
 }
 
+dl.spacers {
+  dt {
+    margin-top: spacers.$spacer-md;
+  }
+
+  dd {
+    background-color: colors.$brand-green-50;
+    width: 100%;
+    margin: 0;
+  }
+}
+
 :root {
   --background-color: #{colors.$brand-gray-10};
   --brand-blue: #{colors.$brand-blue};
   --brand-red: #{colors.$brand-red};
+
+  --spacer-xxs: #{spacers.$spacer-xxs};
+  --spacer-xs: #{spacers.$spacer-xs};
+  --spacer-sm: #{spacers.$spacer-sm};
+  --spacer-md: #{spacers.$spacer-md};
+  --spacer-base: #{spacers.$spacer-base};
+  --spacer-lg: #{spacers.$spacer-lg};
+  --spacer-xl: #{spacers.$spacer-xl};
+  --spacer-xxl: #{spacers.$spacer-xxl};
 }

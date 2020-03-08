@@ -11,6 +11,34 @@ Then you can also look at the code examples to see what markup you need to gener
 
 You can use the styling from the [Table](/table) component to get the base styling for the table.
 
+## Filter Element
+
+```jsx
+import { createElement } from "complate-stream";
+import { TabelleFilter } from "./app/components/tabelle";
+
+<TabelleFilter name="column" label="Column 1" />
+```
+
+## Sort Element
+
+```jsx
+import { createElement } from "complate-stream";
+import { TabelleArrows } from "./app/components/tabelle";
+
+<TabelleArrows name="column" label="Column 1" sorted="asc" />
+```
+
+## Header Element
+
+```jsx
+import { createElement } from "complate-stream";
+import { TabelleHeader } from "./app/components/tabelle";
+
+<TabelleHeader name="column" label="Column 1" sorted="desc" />
+```
+
+
 ## Sorting the table
 
 Demo: select the up arrow on the first column to sort the table by fruit
@@ -27,15 +55,9 @@ import Table from "./app/components/table";
     <Table>
       <thead>
         <tr>
-          <th>
-            <TabelleHeader name="fruit" label="Fruit" sorted="desc" />
-          </th>
-          <th>
-            <TabelleHeader name="number" label="Number" />
-          </th>
-          <th>
-            <TabelleHeader name="animal" label="Animal" />
-          </th>
+          <TabelleHeader name="fruit" label="Fruit" sorted="desc" />
+          <TabelleHeader name="number" label="Number" />
+          <TabelleHeader name="animal" label="Animal" />
         </tr>
       </thead>
       <tbody>
@@ -64,15 +86,9 @@ import Table from "./app/components/table";
     <Table>
       <thead>
         <tr>
-          <th>
-            <TabelleHeader name="fruit" label="Fruit" sorted="asc" />
-          </th>
-          <th>
-            <TabelleHeader name="number" label="Number" />
-          </th>
-          <th>
-            <TabelleHeader name="animal" label="Animal" />
-          </th>
+          <TabelleHeader name="fruit" label="Fruit" sorted="asc" />
+          <TabelleHeader name="number" label="Number" />
+          <TabelleHeader name="animal" label="Animal" />
         </tr>
       </thead>
       <tbody>
@@ -107,15 +123,9 @@ import Table from "./app/components/table";
     <Table>
       <thead>
         <tr>
-          <th>
-            <TabelleHeader name="fruit" label="Fruit" sorted="desc" />
-          </th>
-          <th>
-            <TabelleHeader name="number" label="Number" />
-          </th>
-          <th>
-            <TabelleHeader name="animal" label="Animal" />
-          </th>
+          <TabelleHeader name="fruit" label="Fruit" sorted="desc" />
+          <TabelleHeader name="number" label="Number" />
+          <TabelleHeader name="animal" label="Animal" />
         </tr>
       </thead>
       <tbody>
@@ -147,15 +157,9 @@ import Table from "./app/components/table";
     <Table>
       <thead>
         <tr>
-          <th>
-            <TabelleHeader name="fruit" label="Fruit" sorted="desc" value="A" />
-          </th>
-          <th>
-            <TabelleHeader name="number" label="Number" />
-          </th>
-          <th>
-            <TabelleHeader name="animal" label="Animal" />
-          </th>
+          <TabelleHeader name="fruit" label="Fruit" sorted="desc" value="A" />
+          <TabelleHeader name="number" label="Number" />
+          <TabelleHeader name="animal" label="Animal" />
         </tr>
       </thead>
       <tbody>

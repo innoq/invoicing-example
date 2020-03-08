@@ -14,7 +14,9 @@ The reason for this constellation is that `NavbarLayout` uses CSS grid to decide
 
 It will be adjusted responsively based on the size of the viewport.
 
-```jsx
+### Mobile Viewport
+
+```jsx width=320
 import { createElement } from "complate-stream";
 import { NavbarLayout } from "./app/components/navbar";
 
@@ -22,8 +24,21 @@ import { NavbarLayout } from "./app/components/navbar";
   <div class="navbar">
     <p style="color: white;">This is the region for the navbar.</p>
   </div>
-  <div class="secondary-navbar">
-    <p style="color: white;">This is the region for the secondary navbar.</p>
+  <main style="height: 300px; background-color: var(--background-color);">
+    This is the region for the main content area.
+  </main>
+</NavbarLayout>
+```
+
+### Responsive Behavior
+
+```jsx
+import { createElement } from "complate-stream";
+import { NavbarLayout } from "./app/components/navbar";
+
+<NavbarLayout>
+  <div class="navbar">
+    <p style="color: white;">This is the region for the navbar.</p>
   </div>
   <main style="height: 300px; background-color: var(--background-color);">
     This is the region for the main content area.

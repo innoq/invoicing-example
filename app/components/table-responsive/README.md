@@ -32,32 +32,32 @@ import Amount from "./app/components/amount";
 import ProgressBar from "./app/components/progress-bar";
 
 <div style="background-color: var(--background-color); padding: 1rem;">
-  <h1 class="sr-only">Responsive Table</h1>
+  <h1 class="sr-only">Hidden heading to help with screenreader tests</h1>
   <Table>
     <THead>
       <Tr>
-        <CollapserTh label="Einträge auf/zuklappen" />
-        <TabelleHeader name="auftragsnr" label="Auftragsnr."  
-          shortLabel="Auftrag" sorted="asc" />
+        <CollapserTh label="Expand/Collapse Order" sorted="asc" />
+        <TabelleHeader name="auftragsnr" label="Order Number"
+          shortLabel="Number" sorted="asc" />
         <TabelleHeader name="saleorder" label="Sale Order Name"    
-          shortLabel="Order" sorted="asc" />
-        <TabelleHeader name="kunde" label="Kunde" sorted="asc" />
+          shortLabel="Order" />
+        <TabelleHeader name="kunde" label="Customer"  />
         <TabelleHeader name="principal" label="Principal"
-          shortLabel="Prinz" sorted="asc" />
-        <TabelleHeader name="freigaben" label="Freigaben" sorted="asc" />
-        <TabelleHeader name="status" label="Status" sorted="asc" />
-        <TabelleHeader name="netto" label="Nettopreis"
-          shortLabel="Netto" sorted="asc" />
+          shortLabel="Prinz" />
+        <TabelleHeader name="freigaben" label="Approval" />
+        <TabelleHeader name="status" label="Status" />
+        <TabelleHeader name="netto" label="Net Price"
+          shortLabel="Net" />
       </Tr>
     </THead>
     <TBody>
       {Array(5).fill().map(() => <Tr>
-        <CollapserTd labelExpand="Auftrag D19.10.2273 aufklappen"
-          labelCollapse="Auftrag D19.10.2273 zuklappen" />
+        <CollapserTd labelExpand="Expand order D19.10.2273"
+          labelCollapse="Collapse order D19.10.2273" />
         <Td column="Auftragnr." modifier="emphasized">D19.10.2273</Td>
         <Td column="Sale Order Name">Quality-focused bandwidth-monitored parallelism</Td>
         <Td column="Kunde" modifier="muted">Stiedemann, Wolff and Pachocha</Td>
-        <Td column="Principal" modifier="muted">Jörg Müller</Td>
+        <Td column="Principal" modifier="muted">Heribert Innoq</Td>
         <Td column="Freigaben" modifier="muted">
           <ProgressBar value="2" max="3" />
         </Td>
