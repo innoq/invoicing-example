@@ -16,6 +16,10 @@ some of our favorite tools:
 
 ## Setup (without Docker)
 
+[Install Node.js](https://nodejs.org/en/download/)
+
+In this directory run:
+
 ```
 npm i
 ```
