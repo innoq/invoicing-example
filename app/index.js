@@ -16,6 +16,7 @@ app.use(
 app.use(express.static(path.resolve(__dirname, "../public")));
 
 app.get("/", require("./controllers/invoices").index);
+app.get("/no-js", require("./controllers/no-js").index);
 
 let server = app.listen(PORT, HOST, () => {
   let { address, port } = server.address();
