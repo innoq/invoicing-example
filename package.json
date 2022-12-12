@@ -33,7 +33,7 @@
     "@ungap/custom-elements-builtin": "^0.4.0",
     "complate-express": "^0.16.0",
     "complate-stream": "^0.16.9",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "faucet-pipeline-express": "^0.1.0",
     "innoq-styleguide": "^2.1.1",
     "lodash": "^4.17.15",
